@@ -124,15 +124,17 @@ namespace DBWizard
             }
         }
 
-        public List<Parent> GetParentByID(int parent_id)
+        public Parent GetParentByID(int parent_id)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                string strQuery = "SELECT * FROM parents WHERE id=@id;";
+                string strQuery = "SELECT * FROM parents WHERE parent_id=@id;";
 
                 var output = cnn.Query<Parent>(strQuery, new { id = parent_id });
 
-                return output.ToList();
+                var parList = output.ToList();
+                Parent parent = parList[0];
+                return parent;
             }
         }
 
