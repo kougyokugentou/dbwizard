@@ -21,15 +21,15 @@ namespace DBWizard.Models
         public string GradeLevel { get; set; }
         public byte[] photo { get; set; }
 
+        //readonly property to populate the found student searchbox.
+        // this is a "Get" only property
+        public string DisplayName{
+            get =>
+                $"{LastName}, {FirstName} - Student ID: {student_id}";
+        }
+
         public virtual Parent Parent { get; set; }
         public virtual Program Program { get; set; }
         public virtual School School { get; set; }
-
-        //override toString for search functionality.
-        public override string ToString()
-        {
-            string str = $"{LastName}, {FirstName} student id: {student_id}";
-            return str;
-        }
     }
 }

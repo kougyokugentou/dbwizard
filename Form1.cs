@@ -256,12 +256,11 @@ namespace DBWizard
 
         }
 
-        //TODO: Remove Chaos Monkey button
+        //TODO: Remove Chaos Monkey button prior to release
         private void btnChaosMonkey_Click(object sender, EventArgs e)
         {
             MessageBox.Show("CHAOS MONKEY");
             return;
-
         }
 
         private void clear_button_Click(object sender, EventArgs e)
@@ -297,7 +296,34 @@ namespace DBWizard
                     NumericUpDown nud = (NumericUpDown)c;
                     nud.Value = nud.Minimum;
                 }
+
+                if(c is PictureBox)
+                {
+                    PictureBox pb = (PictureBox)c;
+                    pb.Image = Properties.Resources.student;
+                }
+            } // foreach
+
+            //clear parent data
+            parent_lastNameTextBox.Text = string.Empty;
+            parent_firstNameTextBox.Text = string.Empty;
+            phoneNumberNumericUpDown.Value = phoneNumberNumericUpDown.Minimum;
+            emailAddressTextBox.Text = string.Empty;
+
+            //clear form errors
+            foreach (Control c in errorProvider1.ContainerControl.Controls)
+            {
+                errorProvider1.SetError(c, "");
             }
+
+        } //ClearForm()
+
+        private void ClearFoundStudentsComboBox()
+        {
+            foundStudents_comboBox.DataSource = null;
+            foundStudents_comboBox.Items.Clear();
+            foundStudents_comboBox.Text = string.Empty;
+            foundStudents_comboBox.SelectedIndex = -1;
         }
 
         private void search_textBox_KeyDown(object sender, KeyEventArgs e)
@@ -306,16 +332,12 @@ namespace DBWizard
 
             if (e.KeyCode == Keys.Enter)
             {
-                foundStudents_comboBox.Items.Clear();
-                foundStudents_comboBox.Text = String.Empty;
+                ClearFoundStudentsComboBox();
 
                 foundStudents = SqliteDataAccess.FindStudentByLastname(search_textBox.Text);
 
-                foreach (Student s in foundStudents)
-                {
-                    foundStudents_comboBox.Items.Add(s);
-                }
-
+                foundStudents_comboBox.DataSource = foundStudents;
+                foundStudents_comboBox.DisplayMember = "DisplayName";
                 foundStudents_comboBox.Text = (foundStudents.Count > 0) ? "Students found, click here" : "No students found";
             }
         }
@@ -329,7 +351,38 @@ namespace DBWizard
         //TODO:Populate the form based on the found student.
         private void foundStudents_comboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            Student foundStudent = foundStudents_comboBox.SelectedItem as Student;
             ClearForm();
-        }
-    }
+
+            //The found students combo box is not completely
+            //cleared upon clearform. Do this now.
+            ClearFoundStudentsComboBox();
+
+            //Populate the form based on the found student.
+            lastNameTextBox.Text = foundStudent.LastName;
+            firstNameTextBox.Text = foundStudent.FirstName;
+            programComboBox.SelectedIndex = foundStudent.program_id;
+            schoolComboBox.SelectedIndex = foundStudent.school_id;
+            addressTextBox.Text = foundStudent.address;
+            student_idTextBox.Text = foundStudent.student_id;
+            dob_dateTimePicker.Value = DateTime.Parse(foundStudent.DOB);
+
+            //May need to select the index on these comboboxes.
+            //TODO: TEEESSTICLES
+            genderComboBox.Text = foundStudent.gender;
+            gradeLevelComboBox.Text = foundStudent.GradeLevel;
+
+            //TODO: Moar Testicles
+            student_pictureBox.Image = (foundStudent.photo != null) ? (Image)ByteArrayToObject(foundStudent.photo) : Properties.Resources.student;
+
+            //Now populate the parent.
+            Parent stuParent = new Parent();
+            stuParent = SqliteDataAccess.GetParentByID(foundStudent.parent_id);
+
+            parent_lastNameTextBox.Text = stuParent.LastName;
+            parent_firstNameTextBox.Text = stuParent.FirstName;
+            phoneNumberNumericUpDown.Value = stuParent.PhoneNumber;
+            emailAddressTextBox.Text = stuParent.EmailAddress;
+        } //foundStudents_comboBox_SelectionChangeCommitted
+    } //Form1
 }

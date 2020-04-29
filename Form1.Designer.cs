@@ -54,6 +54,7 @@
             this.exitsavesDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -91,7 +92,6 @@
             this.btnChaosMonkey = new System.Windows.Forms.Button();
             this.foundStudents_comboBox = new System.Windows.Forms.ComboBox();
             this.lblFoundStudents = new System.Windows.Forms.Label();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             lastNameLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             student_idLabel = new System.Windows.Forms.Label();
@@ -109,11 +109,11 @@
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingNavigator)).BeginInit();
             this.studentBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).BeginInit();
             this.parent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lastNameLabel
@@ -269,7 +269,7 @@
             this.reportsToolStripMenuItem,
             this.exitsavesDataToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 31);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newStudentToolStripMenuItem
@@ -351,6 +351,10 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 30);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // bindingNavigatorCountItem
             // 
@@ -716,10 +720,6 @@
             this.lblFoundStudents.TabIndex = 28;
             this.lblFoundStudents.Text = "Found Students:";
             // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -765,12 +765,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingNavigator)).EndInit();
             this.studentBindingNavigator.ResumeLayout(false);
             this.studentBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).EndInit();
             this.parent_groupBox.ResumeLayout(false);
             this.parent_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
