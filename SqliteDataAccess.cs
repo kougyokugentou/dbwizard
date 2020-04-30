@@ -24,6 +24,19 @@ namespace DBWizard
             }
         }
 
+        //Used in delete function
+        public Student GetStudentByDbID(int dbid_in)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "SELECT * FROM students WHERE id=@id";
+                var output = cnn.Query<Student>(strQuery, new { id = dbid_in });
+                var stuList = output.ToList();
+                Student student = stuList[0];
+
+                return student;
+            }
+        }
         //Can also be used for search function.
         public List<Student> FindStudentByStudentId(string studentid_in)
         {
@@ -66,6 +79,19 @@ namespace DBWizard
                 string strQuery = "INSERT INTO STUDENTS (student_id, parent_id, FirstName, LastName, DOB, gender, address, program_id, school_id, GradeLevel, photo)" +
                     "VALUES (@student_id, @parent_id, @FirstName, @LastName, @DOB, @gender, @address, @program_id, @school_id, @GradeLevel, @photo)";
                 cnn.Execute(strQuery, stu);
+            }
+        }
+
+        internal void DeleteStudent(Student stu_in)
+        {
+            //protect query from 0 or negative indexes.
+            if (stu_in.id <= 0)
+                return;
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "DELETE FROM STUDENTS WHERE id=@id;";
+                cnn.Execute(strQuery, stu_in);
             }
         }
 
@@ -135,6 +161,19 @@ namespace DBWizard
                 var parList = output.ToList();
                 Parent parent = parList[0];
                 return parent;
+            }
+        }
+
+        internal void DeleteParent(Parent par_in)
+        {
+            //protect query from 0 or negative indexes.
+            if (par_in.parent_id <= 0)
+                return;
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "DELETE FROM Parents WHERE parent_id=@parent_id;";
+                cnn.Execute(strQuery, par_in);
             }
         }
 

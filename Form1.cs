@@ -161,6 +161,7 @@ namespace DBWizard
                 student.parent_id = SqliteDataAccess.InsertNewParent(parent);
                 SqliteDataAccess.InsertNewStudent(student);
                 MessageBox.Show("Student successfully added");
+                ClearForm();
             }
         }
 
@@ -310,6 +311,8 @@ namespace DBWizard
             phoneNumberNumericUpDown.Value = phoneNumberNumericUpDown.Minimum;
             emailAddressTextBox.Text = string.Empty;
 
+            ClearFoundStudentsComboBox();
+            
             //clear form errors
             foreach (Control c in errorProvider1.ContainerControl.Controls)
             {
@@ -356,9 +359,10 @@ namespace DBWizard
 
             //The found students combo box is not completely
             //cleared upon clearform. Do this now.
-            ClearFoundStudentsComboBox();
+            //ClearFoundStudentsComboBox();
 
             //Populate the form based on the found student.
+            studentDbID.Value = foundStudent.id;
             lastNameTextBox.Text = foundStudent.LastName;
             firstNameTextBox.Text = foundStudent.FirstName;
             programComboBox.SelectedIndex = foundStudent.program_id;
@@ -384,5 +388,23 @@ namespace DBWizard
             phoneNumberNumericUpDown.Value = stuParent.PhoneNumber;
             emailAddressTextBox.Text = stuParent.EmailAddress;
         } //foundStudents_comboBox_SelectionChangeCommitted
+
+        private void delete_button_Click(object sender, EventArgs e)
+        {
+            if (studentDbID.Value <= 0)
+                return;
+
+            //collect up the student and parent.
+            Student stu = SqliteDataAccess.GetStudentByDbID(Int32.Parse(studentDbID.Value.ToString()));
+            Parent par = SqliteDataAccess.GetParentByID(stu.parent_id);
+
+            //Nerf 'em.
+            SqliteDataAccess.DeleteStudent(stu);
+            SqliteDataAccess.DeleteParent(par);
+
+            //Dispose of the objects.
+            ClearForm();
+            MessageBox.Show("Student deleted from database.");
+        }
     } //Form1
 }
