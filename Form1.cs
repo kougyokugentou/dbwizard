@@ -406,5 +406,29 @@ namespace DBWizard
             ClearForm();
             MessageBox.Show("Student deleted from database.");
         }
+
+        private void exitWithoutSavingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void exitsavesDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Error handling happens on the save_button_Click event, so no need to do it here.
+            save_button_Click(save_button, EventArgs.Empty);
+
+            //If there's an error, oh well, we tried, exit anyway.
+            Environment.Exit(0);
+        }
+
+        private void newStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clear_button_Click(clear_button, EventArgs.Empty);
+        }
+
+        private void saveStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            save_button_Click(save_button, EventArgs.Empty);
+        }
     } //Form1
 }
