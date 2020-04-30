@@ -740,6 +740,7 @@
             this.MinimumSize = new System.Drawing.Size(1421, 806);
             this.Name = "Form1";
             this.Text = "KentYouthDB";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.topTableLayoutPanel.ResumeLayout(false);
             this.topTableLayoutPanel.PerformLayout();
             this.mainMenuStrip.ResumeLayout(false);
