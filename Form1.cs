@@ -37,11 +37,6 @@ namespace DBWizard
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            FillComboBoxes();
-        }
-
         /* Fills program and school combo boxes on the form
          * with the static data from the sqlite db.
          * input: no input
@@ -430,5 +425,6 @@ namespace DBWizard
         {
             save_button_Click(save_button, EventArgs.Empty);
         }
+
     } //Form1
 }
