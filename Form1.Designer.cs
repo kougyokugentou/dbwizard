@@ -259,7 +259,6 @@
             this.fileToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.mainMenuStrip.Size = new System.Drawing.Size(610, 35);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
@@ -345,6 +344,7 @@
             this.studentBindingNavigator.Size = new System.Drawing.Size(382, 35);
             this.studentBindingNavigator.TabIndex = 2;
             this.studentBindingNavigator.Text = "bindingNavigator1";
+            this.studentBindingNavigator.Visible = false;
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -703,6 +703,7 @@
             this.btnChaosMonkey.TabIndex = 26;
             this.btnChaosMonkey.Text = "CHAOS MONKEY";
             this.btnChaosMonkey.UseVisualStyleBackColor = true;
+            this.btnChaosMonkey.Visible = false;
             this.btnChaosMonkey.Click += new System.EventHandler(this.btnChaosMonkey_Click);
             // 
             // foundStudents_comboBox
