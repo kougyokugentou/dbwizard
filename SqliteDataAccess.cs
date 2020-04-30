@@ -103,9 +103,10 @@ namespace DBWizard
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string strQuery = "INSERT INTO PARENTS (FirstName,LastName,PhoneNumber,EmailAddress)" +
-                    "VALUES (@FirstName,@LastName,@PhoneNumber,@EmailAddress);";
-                var affectedRow = cnn.Execute(strQuery, par);
-                return affectedRow;
+                    "VALUES (@FirstName,@LastName,@PhoneNumber,@EmailAddress);" +
+                    "SELECT MAX(parent_id) as parent_id from parents;";
+                int parent_id_out = cnn.Query<int>(strQuery, par).Single();
+                return parent_id_out;
             }
         }
 
