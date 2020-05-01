@@ -11,6 +11,29 @@ namespace DBWizard
 {
     class SqliteDataAccess
     {
+        #region student
+        // ***************** Create *****************
+
+        /* Inserts a new student to the SQL database.
+         * INPUT: student
+         * OUTPUT: new row to SQL database, null to program.
+         */
+        internal void InsertNewStudent(Student stu)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "INSERT INTO STUDENTS (student_id, parent_id, FirstName, LastName, DOB, gender, address, program_id, school_id, GradeLevel, photo)" +
+                    "VALUES (@student_id, @parent_id, @FirstName, @LastName, @DOB, @gender, @address, @program_id, @school_id, @GradeLevel, @photo)";
+                cnn.Execute(strQuery, stu);
+            }
+        }
+
+        // ***************** Read *****************
+
+        /* Gets a list of all students with the provided last name as equality.
+         * INPUT: String last name
+         * OUTPUT List<Student>
+         */
         public List<Student> FindStudentByLastname(string last_name)
         {
             //A using statement protects us as a failsafe: it guarantees the connection to the
@@ -24,20 +47,24 @@ namespace DBWizard
             }
         }
 
-        //Used in delete function
+        /* Gets a single student from the db given the db id field.
+         * This function is also usedl used in delete functionality of Form1.cs
+         * INPUT: integer database id
+         * OUTPUT: student
+         */
         public Student GetStudentByDbID(int dbid_in)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string strQuery = "SELECT * FROM students WHERE id=@id";
-                var output = cnn.Query<Student>(strQuery, new { id = dbid_in });
-                var stuList = output.ToList();
-                Student student = stuList[0];
+                var stu_out = cnn.Query<Student>(strQuery, new { id = dbid_in }).Single();
 
-                return student;
+                return stu_out;
             }
         }
-        //Can also be used for search function.
+
+        //Can also be used for search function, but currently unused.
+        //TODO: cleanup if we decide not to use this.
         public List<Student> FindStudentByStudentId(string studentid_in)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -49,6 +76,16 @@ namespace DBWizard
             }
         }
 
+        // ***************** Update *****************
+
+        /* Updates an individual student in the DB.
+         * Needs to do field mapping in the Execute call because
+         * the photo field can be null or not null, and 
+         * the conditional operator can be used to change the query on the fly.
+         * 
+         * INPUT: Student
+         * OUTPUT: Data to SQL Database, void to program
+         */
         internal void UpdateStudent(Student stu)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -72,16 +109,12 @@ namespace DBWizard
             }
         }
 
-        internal void InsertNewStudent(Student stu)
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                string strQuery = "INSERT INTO STUDENTS (student_id, parent_id, FirstName, LastName, DOB, gender, address, program_id, school_id, GradeLevel, photo)" +
-                    "VALUES (@student_id, @parent_id, @FirstName, @LastName, @DOB, @gender, @address, @program_id, @school_id, @GradeLevel, @photo)";
-                cnn.Execute(strQuery, stu);
-            }
-        }
+        // ***************** Delete *****************
 
+        /* Deletes a student record from the database.
+         * INPUT: student
+         * OUTPUT: void
+         */
         internal void DeleteStudent(Student stu_in)
         {
             //protect query from 0 or negative indexes.
@@ -95,8 +128,15 @@ namespace DBWizard
             }
         }
 
+        #endregion
+
+        #region parent
+        // ***************** Create *****************
+
         /* Inserts a new parent.
          * returns parent id as the new row # it just inserted.
+         * INPUT: parent
+         * OUTPUT: int <new parent db id>
          */
         internal int InsertNewParent(Parent par)
         {
@@ -110,6 +150,17 @@ namespace DBWizard
             }
         }
 
+        // ***************** Read *****************
+
+        // ***************** Update *****************
+
+        /* Update a parent to the SQL database.
+         * Needs to do the mapping as parent_id is not stored on the parent object of the form.
+         * but it is stored in the student object if the student is found.
+         * 
+         * INPUT: Parent, int parent_id
+         * OUTPUT: Data to SQL database, void to program.
+         */
         internal void UpdateParent(Parent par, int parent_id_in)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -129,6 +180,15 @@ namespace DBWizard
             }
         }
 
+        // ***************** Delete *****************
+
+        #endregion
+
+        #region Misc
+        /* Returns the list of available programs from the DB to fill the Programs drop-down.
+         * INPUT: no args
+         * OUTPUT: List<Program>
+         */
         internal List<Program> GetPrograms()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -139,6 +199,8 @@ namespace DBWizard
                 return output.ToList();
             }
         }
+
+        #endregion
 
         internal List<School> GetSchools()
         {

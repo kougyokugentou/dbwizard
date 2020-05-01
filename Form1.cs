@@ -29,18 +29,20 @@ namespace DBWizard
 {
     public partial class Form1 : Form
     {
+        //Global instance of the SqliteDataAccess object.
         SqliteDataAccess SqliteDataAccess = new SqliteDataAccess();
-        bool bStudentRecordExists = false;
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        //Needed to populate the pre-filled comboboxes. Do not remove.
         private void Form1_Load(object sender, EventArgs e)
         {
             FillComboBoxes();
         }
+
         /* Fills program and school combo boxes on the form
          * with the static data from the sqlite db.
          * input: no input
@@ -65,14 +67,29 @@ namespace DBWizard
         }
 
         //TODO: implement
+        /* On click of the picture box, open a file picker dialog box
+         * for the user to browse/choose a picture.
+         * Once the user clicks OK, the _FileOK event below fires,
+         * validates the input. If file is OK, then read the file from disk,
+         * convert it into an Image, and save it to the student picture box.
+         */
         private void student_pictureBox_DoubleClick(object sender, EventArgs e)
         {
             DialogResult dr = pic_openFileDialog.ShowDialog();
             if(dr == DialogResult.OK)
             {
+                //Place in dicpic box
+
+                //change tag of pic box to something else
+                student_pictureBox.Tag = "dickpic";
             }
         }
 
+        //TODO: Test
+        /* Event that occurs when the user clicks Open in the file dialog box.
+         * Check to see if the photo size is too large for the database.
+         * If so, reject the file and inform the user.
+         */
         private void pic_openFileDialog_FileOk(object sender, CancelEventArgs e)
         {
             byte[] dickpic;
@@ -87,19 +104,13 @@ namespace DBWizard
             }
         }
 
-        //TODO: implement
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = pic_openFileDialog.ShowDialog();
-            if(dr == DialogResult.OK)
-            {
-                //Place in dicpic box
-
-                //change tag of pic box to something else
-                student_pictureBox.Tag = "dickpic";
-            }
-        }
-
+        /* Event that fires when user clicks the save button or 
+         * chooses File > Save Student.
+         * 
+         * Saves student to database.
+         * If existing student, update student.
+         * If new student, insert student.
+         */
         private void save_button_Click(object sender, EventArgs e)
         {
             byte[] dickpic;
@@ -116,6 +127,7 @@ namespace DBWizard
                 }
             }
 
+            //TODO: Add Check - if pic is not default pic,
             //Validate the picture is under 2147483647 characters in length.
             dickpic = ObjectToByteArray(student_pictureBox.Image);
             if(dickpic.Length >= 2147483647) //THAT'S WHAT SHE SAID
@@ -150,7 +162,8 @@ namespace DBWizard
 
             //save data to sqldb.
             //update existing student.
-            if(SqliteDataAccess.FindStudentByStudentId(student.student_id).Count > 0)
+            //TODO: test new update.
+            if(SqliteDataAccess.GetStudentByDbID(Int32.Parse(studentDbID.Value.ToString())) != null)
             {
                 SqliteDataAccess.UpdateStudent(student);
                 SqliteDataAccess.UpdateParent(parent,student.parent_id);
@@ -301,6 +314,7 @@ namespace DBWizard
                 {
                     PictureBox pb = (PictureBox)c;
                     pb.Image = Properties.Resources.student;
+                    pb.Tag = "DefaultImage";
                 }
             } // foreach
 
@@ -429,7 +443,5 @@ namespace DBWizard
         {
             save_button_Click(save_button, EventArgs.Empty);
         }
-
-   
     } //Form1
 }
