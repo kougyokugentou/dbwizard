@@ -177,8 +177,11 @@ namespace DBWizard
             }
         }
 
-        //Convert student photo to byte array for saving to db.
-        //Also used to see if the photo is too large for the db blob type.
+        /* Convert student photo to byte array for saving to db.
+         * Also used to see if the photo is too large for the db blob type.
+         * INPUT: Object
+         * OUPUT byte[] array
+         */
         private byte[] ObjectToByteArray(Object obj)
         {
             if (obj == null)
@@ -191,8 +194,11 @@ namespace DBWizard
             return ms.ToArray();
         }
 
-        //Convert student photo from byte array to object.
-        // Convert a byte array to an Object
+        /* Convert student photo from byte array to object.
+         * Convert a byte array to an Object
+         * INPUT: byte[] array
+         * OUTPUT: object
+         */
         private Object ByteArrayToObject(byte[] arrBytes)
 
         {
@@ -217,6 +223,7 @@ namespace DBWizard
                 errorProvider1.SetError(tb, "");
         }
 
+        //Validates any given combobox to ensure an item is selected.
         private void ComboBox_Validating(object sender, CancelEventArgs e)
         {
             ComboBox cb = (ComboBox)sender;
@@ -241,6 +248,9 @@ namespace DBWizard
                 { errorProvider1.SetError(phoneNumberNumericUpDown, "");  }
         }
 
+        /* Checks to see if provided email address is valid
+         * by matching against an email address regex i stole from the interweb.
+         */
         private void emailAddressTextBox_Validating(object sender, CancelEventArgs e)
         {
             //email address regex
@@ -251,6 +261,11 @@ namespace DBWizard
                 errorProvider1.SetError(emailAddressTextBox, "");
         }
 
+        /* Validation of DOB Date Time Picker does not really do any validation
+         * other than check the basic, most probable case of the date is still today.
+         * Yes, the Student can literally be born yesterday, and in 12th grade.
+         * Paradox, ahoy!
+         */
         private void dob_dateTimePicker_Validating(object sender, CancelEventArgs e)
         {
             if(dob_dateTimePicker.Value == DateTime.Now)
@@ -259,6 +274,8 @@ namespace DBWizard
                 { errorProvider1.SetError(dob_dateTimePicker, ""); }
         }
 
+        //Since not sure if student ID textbox can contain numbers
+        //this is seperate from generic textbox which is only letters.
         private void student_idTextBox_Validating(object sender, CancelEventArgs e)
         {
             TextBox tb = (TextBox)sender;
@@ -276,12 +293,16 @@ namespace DBWizard
             return;
         }
 
+        //Button to clear the form, exactly as it says on the tin.
         private void clear_button_Click(object sender, EventArgs e)
         {
             ClearForm();
         }
 
-        // clears the form
+        /* clears the form
+         * Does this by looping through all the controls and setting them to null
+         * or to default values. Be sure to set student textbox tag to DefaultImage.
+         */
         private void ClearForm()
         {
             foreach(Control c in this.Controls)
@@ -310,6 +331,8 @@ namespace DBWizard
                     nud.Value = nud.Minimum;
                 }
 
+                //Be sure to set the student textbox tag to DefaultImage
+                //or you will be in for a really bad time.
                 if(c is PictureBox)
                 {
                     PictureBox pb = (PictureBox)c;
@@ -334,6 +357,7 @@ namespace DBWizard
 
         } //ClearForm()
 
+        //Clears the found student combobox.
         private void ClearFoundStudentsComboBox()
         {
             foundStudents_comboBox.DataSource = null;
@@ -342,6 +366,11 @@ namespace DBWizard
             foundStudents_comboBox.SelectedIndex = -1;
         }
 
+        /* Implements main search functionality by taking in whatever
+         * is typed in the search box. If the enter key is pressed,
+         * will execute search of the db based on last name and return
+         * found results or not found to the foundStudents combobox.
+         */
         private void search_textBox_KeyDown(object sender, KeyEventArgs e)
         {
             List<Student> foundStudents = new List<Student>();
@@ -364,7 +393,10 @@ namespace DBWizard
             e.SuppressKeyPress = true;
         }
 
-        //TODO:Populate the form based on the found student.
+        /* When the user clicks on a found student,
+         * automatically populate the form based on the found student
+         * and that student's parent.
+         */
         private void foundStudents_comboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             Student foundStudent = foundStudents_comboBox.SelectedItem as Student;
@@ -401,7 +433,13 @@ namespace DBWizard
             phoneNumberNumericUpDown.Value = stuParent.PhoneNumber;
             emailAddressTextBox.Text = stuParent.EmailAddress;
         } //foundStudents_comboBox_SelectionChangeCommitted
-
+        
+        /* Deletes a student.
+         * Note that you must FIRST, FIND the student, then click on them
+         * in the drop-down menu to have the form populate, then this
+         * function will work to delete both the student and the parent
+         * from the backend database.
+         */
         private void delete_button_Click(object sender, EventArgs e)
         {
             if (studentDbID.Value <= 0)
@@ -420,6 +458,11 @@ namespace DBWizard
             MessageBox.Show("Student deleted from database.");
         }
 
+        #region redundancy
+        /* This whole region of code simply implements the File menu
+         * which only calls the previously programmed delegates for saving a student,
+         * or creating a new student. Henceforth, I present to you the redundancy region.
+         */
         private void exitWithoutSavingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -443,5 +486,6 @@ namespace DBWizard
         {
             save_button_Click(save_button, EventArgs.Empty);
         }
+        #endregion
     } //Form1
 }

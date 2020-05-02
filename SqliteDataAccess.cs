@@ -152,6 +152,24 @@ namespace DBWizard
 
         // ***************** Read *****************
 
+        /* Gets a single Parent from the db given the parent_id db field.
+         * INPUT: int parent_id
+         * OUTPUT: Parent
+         */
+        public Parent GetParentByID(int parent_id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "SELECT * FROM parents WHERE parent_id=@id;";
+
+                var output = cnn.Query<Parent>(strQuery, new { id = parent_id });
+
+                var parList = output.ToList();
+                Parent parent = parList[0];
+                return parent;
+            }
+        }
+
         // ***************** Update *****************
 
         /* Update a parent to the SQL database.
@@ -182,6 +200,23 @@ namespace DBWizard
 
         // ***************** Delete *****************
 
+        /* Deletes a parent record from the database.
+         * INPUT: Parent
+         * OUTPUT: void
+         */
+        internal void DeleteParent(Parent par_in)
+        {
+            //protect query from 0 or negative indexes.
+            if (par_in.parent_id <= 0)
+                return;
+
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "DELETE FROM Parents WHERE parent_id=@parent_id;";
+                cnn.Execute(strQuery, par_in);
+            }
+        }
+
         #endregion
 
         #region Misc
@@ -200,8 +235,10 @@ namespace DBWizard
             }
         }
 
-        #endregion
-
+        /* Returns the list of available schools from the DB to fill the Schools drop-down.
+         * INPUT: no args
+         * OUTPUT: List<School>
+         */
         internal List<School> GetSchools()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -212,33 +249,7 @@ namespace DBWizard
                 return output.ToList();
             }
         }
-
-        public Parent GetParentByID(int parent_id)
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                string strQuery = "SELECT * FROM parents WHERE parent_id=@id;";
-
-                var output = cnn.Query<Parent>(strQuery, new { id = parent_id });
-
-                var parList = output.ToList();
-                Parent parent = parList[0];
-                return parent;
-            }
-        }
-
-        internal void DeleteParent(Parent par_in)
-        {
-            //protect query from 0 or negative indexes.
-            if (par_in.parent_id <= 0)
-                return;
-
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                string strQuery = "DELETE FROM Parents WHERE parent_id=@parent_id;";
-                cnn.Execute(strQuery, par_in);
-            }
-        }
+        #endregion
 
         private static string LoadConnectionString(string id = "Default")
         {
