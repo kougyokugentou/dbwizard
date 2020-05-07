@@ -8,7 +8,7 @@ namespace DBWizard.Models
 {
     public class Student
     {
-        public int id { get; }
+        public int id { get; set; }
         public string student_id { get; set; }
         public int parent_id { get; set; }
         public string FirstName { get; set; }
