@@ -91,7 +91,7 @@ namespace DBWizard
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string strQuery = "UPDATE Students SET student_id = @student_id, FirstName = @First_Name, LastName = @Last_Name," +
-                "DOB = @_dob, Gender = @_gender, Address = @_address, GradeLevel = @Grade_Level, Photo = @_photo" +
+                "DOB = @_dob, Gender = @_gender, Address = @_address, GradeLevel = @Grade_Level, Photo = @_photo " +
                 "WHERE id = @_id;";
 
                 cnn.Execute(strQuery, new
@@ -176,25 +176,18 @@ namespace DBWizard
          * Needs to do the mapping as parent_id is not stored on the parent object of the form.
          * but it is stored in the student object if the student is found.
          * 
-         * INPUT: Parent, int parent_id
+         * INPUT: Parent
          * OUTPUT: Data to SQL database, void to program.
          */
-        internal void UpdateParent(Parent par, int parent_id_in)
+        internal void UpdateParent(Parent par)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                string strQuery = "UPDATE Parents SET FirstName = @First_Name, LastName = @Last_Name," +
-                    "PhoneNumber = @Phone_Number, EmailAddress = @Email_Address" +
-                    "WHERE parent_id = @_id;";
+                string strQuery = "UPDATE Parents SET FirstName = @FirstName, LastName = @LastName," +
+                    "PhoneNumber = @PhoneNumber, EmailAddress = @EmailAddress " +
+                    "WHERE parent_id = @parent_id;";
 
-                cnn.Execute(strQuery, new
-                {
-                    _id = parent_id_in,
-                    First_Name = par.FirstName,
-                    Last_Name = par.LastName,
-                    Phone_Number = par.PhoneNumber,
-                    Email_Address = par.EmailAddress
-                });
+                cnn.Execute(strQuery, par);
             }
         }
 
