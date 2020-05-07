@@ -162,11 +162,14 @@ namespace DBWizard
 
             //save data to sqldb.
             //update existing student.
-            //TODO: test new update.
             if(SqliteDataAccess.GetStudentByDbID(Int32.Parse(studentDbID.Value.ToString())) != null)
             {
+                student.id = Int32.Parse(studentDbID.Value.ToString());
+                parent.parent_id = Int32.Parse(parentDbID.Value.ToString());
+
                 SqliteDataAccess.UpdateStudent(student);
-                SqliteDataAccess.UpdateParent(parent,student.parent_id);
+                SqliteDataAccess.UpdateParent(parent);
+                MessageBox.Show("Student and parent successfully updated.");
             }
             else //new student
             {
@@ -348,14 +351,21 @@ namespace DBWizard
             emailAddressTextBox.Text = string.Empty;
 
             ClearFoundStudentsComboBox();
-            
+            ClearFormErrors();
+        } //ClearForm()
+
+        /* Clears form errors out of the errorprovider.
+         * INPUTS: no args
+         * OUTPUT: void
+         */
+        private void ClearFormErrors()
+        {
             //clear form errors
             foreach (Control c in errorProvider1.ContainerControl.Controls)
             {
                 errorProvider1.SetError(c, "");
             }
-
-        } //ClearForm()
+        }
 
         //Clears the found student combobox.
         private void ClearFoundStudentsComboBox()
@@ -417,11 +427,10 @@ namespace DBWizard
             dob_dateTimePicker.Value = DateTime.Parse(foundStudent.DOB);
 
             //May need to select the index on these comboboxes.
-            //TODO: TEEESSTICLES
             genderComboBox.Text = foundStudent.gender;
             gradeLevelComboBox.Text = foundStudent.GradeLevel;
 
-            //TODO: Moar Testicles
+            //TODO: Test
             student_pictureBox.Image = (foundStudent.photo != null) ? (Image)ByteArrayToObject(foundStudent.photo) : Properties.Resources.student;
 
             //Now populate the parent.
@@ -432,6 +441,11 @@ namespace DBWizard
             parent_firstNameTextBox.Text = stuParent.FirstName;
             phoneNumberNumericUpDown.Value = stuParent.PhoneNumber;
             emailAddressTextBox.Text = stuParent.EmailAddress;
+            parentDbID.Value = stuParent.parent_id;
+
+            //Clear form errors, if any.
+            ClearFormErrors();
+
         } //foundStudents_comboBox_SelectionChangeCommitted
         
         /* Deletes a student.
@@ -475,16 +489,6 @@ namespace DBWizard
 
             //If there's an error, oh well, we tried, exit anyway.
             Environment.Exit(0);
-        }
-
-        private void newStudentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            clear_button_Click(clear_button, EventArgs.Empty);
-        }
-
-        private void saveStudentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            save_button_Click(save_button, EventArgs.Empty);
         }
         #endregion
     } //Form1
