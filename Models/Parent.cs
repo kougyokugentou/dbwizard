@@ -8,7 +8,7 @@ namespace DBWizard.Models
 {
     public class Parent
     {
-        public int parent_id { get; }
+        public int parent_id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public long PhoneNumber { get; set; }
