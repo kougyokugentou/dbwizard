@@ -110,10 +110,11 @@
             // 
             // lastNameLabel
             // 
+            lastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             lastNameLabel.AutoSize = true;
             lastNameLabel.BackColor = System.Drawing.Color.Transparent;
             lastNameLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lastNameLabel.Location = new System.Drawing.Point(629, 8);
+            lastNameLabel.Location = new System.Drawing.Point(629, 9);
             lastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lastNameLabel.Name = "lastNameLabel";
             lastNameLabel.Size = new System.Drawing.Size(122, 35);
@@ -122,10 +123,11 @@
             // 
             // firstNameLabel
             // 
+            firstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             firstNameLabel.AutoSize = true;
             firstNameLabel.BackColor = System.Drawing.Color.Transparent;
             firstNameLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            firstNameLabel.Location = new System.Drawing.Point(320, 8);
+            firstNameLabel.Location = new System.Drawing.Point(320, 9);
             firstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             firstNameLabel.Name = "firstNameLabel";
             firstNameLabel.Size = new System.Drawing.Size(126, 35);
@@ -134,10 +136,11 @@
             // 
             // student_idLabel
             // 
+            student_idLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             student_idLabel.AutoSize = true;
             student_idLabel.BackColor = System.Drawing.Color.Transparent;
             student_idLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            student_idLabel.Location = new System.Drawing.Point(49, 228);
+            student_idLabel.Location = new System.Drawing.Point(49, 229);
             student_idLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             student_idLabel.Name = "student_idLabel";
             student_idLabel.Size = new System.Drawing.Size(123, 35);
@@ -146,10 +149,11 @@
             // 
             // dOBLabel
             // 
+            dOBLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             dOBLabel.AutoSize = true;
             dOBLabel.BackColor = System.Drawing.Color.Transparent;
             dOBLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dOBLabel.Location = new System.Drawing.Point(320, 98);
+            dOBLabel.Location = new System.Drawing.Point(320, 99);
             dOBLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dOBLabel.Name = "dOBLabel";
             dOBLabel.Size = new System.Drawing.Size(65, 35);
@@ -158,10 +162,11 @@
             // 
             // programNameLabel
             // 
+            programNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             programNameLabel.AutoSize = true;
             programNameLabel.BackColor = System.Drawing.Color.Transparent;
             programNameLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            programNameLabel.Location = new System.Drawing.Point(629, 98);
+            programNameLabel.Location = new System.Drawing.Point(629, 99);
             programNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             programNameLabel.Name = "programNameLabel";
             programNameLabel.Size = new System.Drawing.Size(104, 35);
@@ -170,10 +175,11 @@
             // 
             // addressLabel
             // 
+            addressLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             addressLabel.AutoSize = true;
             addressLabel.BackColor = System.Drawing.Color.Transparent;
             addressLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            addressLabel.Location = new System.Drawing.Point(320, 275);
+            addressLabel.Location = new System.Drawing.Point(320, 276);
             addressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(96, 35);
@@ -182,10 +188,11 @@
             // 
             // schoolLabel
             // 
+            schoolLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             schoolLabel.AutoSize = true;
             schoolLabel.BackColor = System.Drawing.Color.Transparent;
             schoolLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schoolLabel.Location = new System.Drawing.Point(629, 188);
+            schoolLabel.Location = new System.Drawing.Point(629, 189);
             schoolLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             schoolLabel.Name = "schoolLabel";
             schoolLabel.Size = new System.Drawing.Size(84, 35);
@@ -194,10 +201,11 @@
             // 
             // genderLabel
             // 
+            genderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             genderLabel.AutoSize = true;
             genderLabel.BackColor = System.Drawing.Color.Transparent;
             genderLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            genderLabel.Location = new System.Drawing.Point(320, 188);
+            genderLabel.Location = new System.Drawing.Point(320, 189);
             genderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new System.Drawing.Size(91, 35);
@@ -206,10 +214,11 @@
             // 
             // gradeLevelLabel
             // 
+            gradeLevelLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             gradeLevelLabel.AutoSize = true;
             gradeLevelLabel.BackColor = System.Drawing.Color.Transparent;
             gradeLevelLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gradeLevelLabel.Location = new System.Drawing.Point(629, 275);
+            gradeLevelLabel.Location = new System.Drawing.Point(629, 276);
             gradeLevelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             gradeLevelLabel.Name = "gradeLevelLabel";
             gradeLevelLabel.Size = new System.Drawing.Size(134, 35);
@@ -352,9 +361,10 @@
             // 
             // student_pictureBox
             // 
+            this.student_pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.student_pictureBox.BackColor = System.Drawing.SystemColors.Window;
             this.student_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("student_pictureBox.Image")));
-            this.student_pictureBox.Location = new System.Drawing.Point(55, 28);
+            this.student_pictureBox.Location = new System.Drawing.Point(55, 29);
             this.student_pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.student_pictureBox.Name = "student_pictureBox";
             this.student_pictureBox.Size = new System.Drawing.Size(208, 195);
@@ -366,9 +376,10 @@
             // 
             // lastNameTextBox
             // 
+            this.lastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "LastName", true));
             this.lastNameTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameTextBox.Location = new System.Drawing.Point(635, 46);
+            this.lastNameTextBox.Location = new System.Drawing.Point(635, 47);
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(221, 38);
@@ -377,9 +388,10 @@
             // 
             // firstNameTextBox
             // 
+            this.firstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "FirstName", true));
             this.firstNameTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameTextBox.Location = new System.Drawing.Point(324, 46);
+            this.firstNameTextBox.Location = new System.Drawing.Point(324, 47);
             this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(235, 38);
@@ -388,9 +400,10 @@
             // 
             // student_idTextBox
             // 
+            this.student_idTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.student_idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "student_id", true));
             this.student_idTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.student_idTextBox.Location = new System.Drawing.Point(55, 269);
+            this.student_idTextBox.Location = new System.Drawing.Point(55, 270);
             this.student_idTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.student_idTextBox.Name = "student_idTextBox";
             this.student_idTextBox.Size = new System.Drawing.Size(179, 38);
@@ -399,9 +412,10 @@
             // 
             // dob_dateTimePicker
             // 
+            this.dob_dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dob_dateTimePicker.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dob_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dob_dateTimePicker.Location = new System.Drawing.Point(325, 136);
+            this.dob_dateTimePicker.Location = new System.Drawing.Point(325, 137);
             this.dob_dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dob_dateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dob_dateTimePicker.Name = "dob_dateTimePicker";
@@ -411,10 +425,11 @@
             // 
             // programComboBox
             // 
+            this.programComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.programComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programComboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.programComboBox.FormattingEnabled = true;
-            this.programComboBox.Location = new System.Drawing.Point(635, 131);
+            this.programComboBox.Location = new System.Drawing.Point(635, 132);
             this.programComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.programComboBox.Name = "programComboBox";
             this.programComboBox.Size = new System.Drawing.Size(235, 43);
@@ -423,9 +438,10 @@
             // 
             // addressTextBox
             // 
+            this.addressTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "address", true));
             this.addressTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTextBox.Location = new System.Drawing.Point(325, 314);
+            this.addressTextBox.Location = new System.Drawing.Point(325, 315);
             this.addressTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
@@ -435,11 +451,12 @@
             // 
             // schoolComboBox
             // 
+            this.schoolComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.schoolComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "School.name", true));
             this.schoolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.schoolComboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schoolComboBox.FormattingEnabled = true;
-            this.schoolComboBox.Location = new System.Drawing.Point(635, 225);
+            this.schoolComboBox.Location = new System.Drawing.Point(635, 226);
             this.schoolComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.schoolComboBox.Name = "schoolComboBox";
             this.schoolComboBox.Size = new System.Drawing.Size(235, 43);
@@ -448,6 +465,7 @@
             // 
             // genderComboBox
             // 
+            this.genderComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.genderComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "gender", true));
             this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderComboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -455,7 +473,7 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(325, 225);
+            this.genderComboBox.Location = new System.Drawing.Point(325, 226);
             this.genderComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(160, 43);
@@ -464,6 +482,7 @@
             // 
             // gradeLevelComboBox
             // 
+            this.gradeLevelComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gradeLevelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "GradeLevel", true));
             this.gradeLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gradeLevelComboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -482,7 +501,7 @@
             "10",
             "11",
             "12"});
-            this.gradeLevelComboBox.Location = new System.Drawing.Point(635, 314);
+            this.gradeLevelComboBox.Location = new System.Drawing.Point(635, 315);
             this.gradeLevelComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gradeLevelComboBox.Name = "gradeLevelComboBox";
             this.gradeLevelComboBox.Size = new System.Drawing.Size(160, 43);
@@ -491,8 +510,9 @@
             // 
             // save_button
             // 
+            this.save_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.save_button.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_button.Location = new System.Drawing.Point(105, 458);
+            this.save_button.Location = new System.Drawing.Point(105, 459);
             this.save_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(139, 68);
@@ -503,6 +523,7 @@
             // 
             // parent_groupBox
             // 
+            this.parent_groupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.parent_groupBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.parent_groupBox.Controls.Add(emailAddressLabel);
             this.parent_groupBox.Controls.Add(this.emailAddressTextBox);
@@ -582,8 +603,9 @@
             // 
             // clear_button
             // 
+            this.clear_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.clear_button.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_button.Location = new System.Drawing.Point(324, 458);
+            this.clear_button.Location = new System.Drawing.Point(324, 459);
             this.clear_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(155, 68);
@@ -594,8 +616,9 @@
             // 
             // delete_button
             // 
+            this.delete_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.delete_button.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_button.Location = new System.Drawing.Point(560, 458);
+            this.delete_button.Location = new System.Drawing.Point(560, 459);
             this.delete_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(139, 68);
@@ -614,10 +637,11 @@
             // 
             // lblSearch
             // 
+            this.lblSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSearch.AutoSize = true;
             this.lblSearch.BackColor = System.Drawing.Color.Transparent;
             this.lblSearch.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(947, 5);
+            this.lblSearch.Location = new System.Drawing.Point(947, 6);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(300, 35);
@@ -626,8 +650,9 @@
             // 
             // search_textBox
             // 
+            this.search_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.search_textBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_textBox.Location = new System.Drawing.Point(952, 56);
+            this.search_textBox.Location = new System.Drawing.Point(952, 57);
             this.search_textBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(377, 38);
@@ -641,8 +666,9 @@
             // 
             // btnChaosMonkey
             // 
+            this.btnChaosMonkey.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnChaosMonkey.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChaosMonkey.Location = new System.Drawing.Point(745, 458);
+            this.btnChaosMonkey.Location = new System.Drawing.Point(745, 459);
             this.btnChaosMonkey.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChaosMonkey.Name = "btnChaosMonkey";
             this.btnChaosMonkey.Size = new System.Drawing.Size(141, 68);
@@ -654,9 +680,10 @@
             // 
             // foundStudents_comboBox
             // 
+            this.foundStudents_comboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.foundStudents_comboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foundStudents_comboBox.FormattingEnabled = true;
-            this.foundStudents_comboBox.Location = new System.Drawing.Point(952, 158);
+            this.foundStudents_comboBox.Location = new System.Drawing.Point(952, 159);
             this.foundStudents_comboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.foundStudents_comboBox.Name = "foundStudents_comboBox";
             this.foundStudents_comboBox.Size = new System.Drawing.Size(377, 43);
@@ -666,10 +693,11 @@
             // 
             // lblFoundStudents
             // 
+            this.lblFoundStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFoundStudents.AutoSize = true;
             this.lblFoundStudents.BackColor = System.Drawing.Color.Transparent;
             this.lblFoundStudents.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoundStudents.Location = new System.Drawing.Point(947, 109);
+            this.lblFoundStudents.Location = new System.Drawing.Point(947, 110);
             this.lblFoundStudents.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFoundStudents.Name = "lblFoundStudents";
             this.lblFoundStudents.Size = new System.Drawing.Size(169, 35);
@@ -689,8 +717,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.lblFoundStudents);
             this.panel1.Controls.Add(this.foundStudents_comboBox);
@@ -720,10 +746,11 @@
             this.panel1.Controls.Add(lastNameLabel);
             this.panel1.Controls.Add(this.lastNameTextBox);
             this.panel1.Controls.Add(this.student_pictureBox);
-            this.panel1.Location = new System.Drawing.Point(0, 42);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 44);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1424, 704);
+            this.panel1.Size = new System.Drawing.Size(1424, 706);
             this.panel1.TabIndex = 29;
             // 
             // parentDbID
