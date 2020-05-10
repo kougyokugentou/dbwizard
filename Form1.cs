@@ -75,6 +75,9 @@ namespace DBWizard
          */
         private void student_pictureBox_DoubleClick(object sender, EventArgs e)
         {
+            MessageBox.Show("A file picker dialog will show and the user can choose a picture to upload\nIt's not done yet.");
+            return;
+
             DialogResult dr = pic_openFileDialog.ShowDialog();
             if(dr == DialogResult.OK)
             {
@@ -495,5 +498,17 @@ namespace DBWizard
             Environment.Exit(0);
         }
         #endregion
+
+        private void studentBySchoolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This function will generate a report of students by school.\nIt's not done yet.");
+            return;
+        }
+
+        private void studentsByProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This function will generate a report of students by program.\nIt's not done yet.");
+            return;
+        }
     } //Form1
 }
