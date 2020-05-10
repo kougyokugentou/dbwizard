@@ -308,7 +308,7 @@ namespace DBWizard
          */
         private void ClearForm()
         {
-            foreach(Control c in this.Controls)
+            foreach(Control c in panel1.Controls)
             {
                 if (c is TextBox)
                 {
@@ -343,6 +343,10 @@ namespace DBWizard
                     pb.Tag = "DefaultImage";
                 }
             } // foreach
+
+            //clear dbid values
+            studentDbID.Value = 0;
+            parentDbID.Value = 0;
 
             //clear parent data
             parent_lastNameTextBox.Text = string.Empty;
