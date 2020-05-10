@@ -54,10 +54,17 @@ namespace DBWizard
          */
         public Student GetStudentByDbID(int dbid_in)
         {
+            /* protect query from 0 or negative indexes.
+             * this is needed when creating a new student
+             * as dbid_in will be zero.
+             */
+            if (dbid_in < 1)
+                return null;
+
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string strQuery = "SELECT * FROM students WHERE id=@id";
-                var stu_out = cnn.Query<Student>(strQuery, new { id = dbid_in }).Single();
+                Student stu_out = cnn.Query<Student>(strQuery, new { id = dbid_in }).Single();
 
                 return stu_out;
             }
