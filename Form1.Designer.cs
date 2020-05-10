@@ -55,6 +55,7 @@
             this.exitsavesDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.student_pictureBox = new System.Windows.Forms.PictureBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.student_idTextBox = new System.Windows.Forms.TextBox();
             this.dob_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -82,7 +83,6 @@
             this.studentDbID = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.parentDbID = new System.Windows.Forms.NumericUpDown();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             lastNameLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             student_idLabel = new System.Windows.Forms.Label();
@@ -99,13 +99,13 @@
             this.topTableLayoutPanel.SuspendLayout();
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.parent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lastNameLabel
@@ -280,7 +280,6 @@
             this.fileToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.mainMenuStrip.Size = new System.Drawing.Size(1078, 33);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
@@ -300,14 +299,14 @@
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.newStudentToolStripMenuItem.Text = "&New Student";
             this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // saveStudentToolStripMenuItem
             // 
             this.saveStudentToolStripMenuItem.Name = "saveStudentToolStripMenuItem";
-            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.saveStudentToolStripMenuItem.Text = "&Save Student";
             this.saveStudentToolStripMenuItem.Click += new System.EventHandler(this.save_button_Click);
             // 
@@ -317,7 +316,7 @@
             this.studentBySchoolToolStripMenuItem,
             this.studentsByProgramToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
             // studentBySchoolToolStripMenuItem
@@ -325,24 +324,26 @@
             this.studentBySchoolToolStripMenuItem.Name = "studentBySchoolToolStripMenuItem";
             this.studentBySchoolToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.studentBySchoolToolStripMenuItem.Text = "Students by school";
+            this.studentBySchoolToolStripMenuItem.Click += new System.EventHandler(this.studentBySchoolToolStripMenuItem_Click);
             // 
             // studentsByProgramToolStripMenuItem
             // 
             this.studentsByProgramToolStripMenuItem.Name = "studentsByProgramToolStripMenuItem";
             this.studentsByProgramToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.studentsByProgramToolStripMenuItem.Text = "Students by program";
+            this.studentsByProgramToolStripMenuItem.Click += new System.EventHandler(this.studentsByProgramToolStripMenuItem_Click);
             // 
             // exitWithoutSavingToolStripMenuItem
             // 
             this.exitWithoutSavingToolStripMenuItem.Name = "exitWithoutSavingToolStripMenuItem";
-            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.exitWithoutSavingToolStripMenuItem.Text = "Exit without saving";
             this.exitWithoutSavingToolStripMenuItem.Click += new System.EventHandler(this.exitWithoutSavingToolStripMenuItem_Click);
             // 
             // exitsavesDataToolStripMenuItem
             // 
             this.exitsavesDataToolStripMenuItem.Name = "exitsavesDataToolStripMenuItem";
-            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.exitsavesDataToolStripMenuItem.Text = "E&xit (saves data)";
             this.exitsavesDataToolStripMenuItem.Click += new System.EventHandler(this.exitsavesDataToolStripMenuItem_Click);
             // 
@@ -370,6 +371,10 @@
             this.lastNameTextBox.Size = new System.Drawing.Size(167, 30);
             this.lastNameTextBox.TabIndex = 4;
             this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // firstNameTextBox
             // 
@@ -710,7 +715,7 @@
             this.panel1.Controls.Add(this.student_pictureBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 35);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1078, 562);
             this.panel1.TabIndex = 29;
@@ -722,10 +727,6 @@
             this.parentDbID.Size = new System.Drawing.Size(47, 26);
             this.parentDbID.TabIndex = 29;
             this.parentDbID.Visible = false;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // Form1
             // 
@@ -747,6 +748,7 @@
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.parent_groupBox.ResumeLayout(false);
             this.parent_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).EndInit();
@@ -755,7 +757,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
