@@ -17,13 +17,9 @@ using System.Windows.Forms;
  * https://www.coderslexicon.com/passing-data-between-forms-using-delegates-and-events/
  * https://dapper-tutorial.net/parameter-anonymous
  * https://www.sqlitetutorial.net/sqlite-foreign-key/
- * https://stackoverflow.com/questions/289680/difference-between-2-dates-in-sqlite
- * https://dzone.com/articles/convert-object-byte-array-and
+ * https://stackoverflow.com/questions/3801275/how-to-convert-image-to-byte-array
+ * https://stackoverflow.com/questions/9173904/byte-array-to-image-conversion
   */
-// Using a delegate to trigger method on the customer view form
-// https://www.coderslexicon.com/passing-data-between-forms-using-delegates-and-events/
-
-
 
 namespace DBWizard
 {
@@ -31,6 +27,8 @@ namespace DBWizard
     {
         //Global instance of the SqliteDataAccess object.
         SqliteDataAccess SqliteDataAccess = new SqliteDataAccess();
+        const string DEFAULT_PIC_TAG = "DefaultPic";
+        const string CUSTOM_PIC_TAG = "dickpic";
 
         public Form1()
         {
@@ -66,7 +64,6 @@ namespace DBWizard
             }
         }
 
-        //TODO: implement
         /* On click of the picture box, open a file picker dialog box
          * for the user to browse/choose a picture.
          * Once the user clicks OK, the _FileOK event below fires,
@@ -75,20 +72,31 @@ namespace DBWizard
          */
         private void student_pictureBox_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("A file picker dialog will show and the user can choose a picture to upload\nIt's not done yet.");
-            return;
-
             DialogResult dr = pic_openFileDialog.ShowDialog();
-            if(dr == DialogResult.OK)
-            {
-                //Place in dicpic box
+            byte[] pic_in;
 
-                //change tag of pic box to something else
-                student_pictureBox.Tag = "dickpic";
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    //Read picture
+                    pic_in = File.ReadAllBytes(pic_openFileDialog.FileName);
+                    Image dickPic = ByteArrayToImage(pic_in);
+
+                    //Place in dicpic box
+                    student_pictureBox.Image = dickPic;
+
+                    //change tag of pic box to something else
+                    student_pictureBox.Tag = CUSTOM_PIC_TAG;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to read selected file, try again.");
+                    return;
+                }
             }
         }
 
-        //TODO: Test
         /* Event that occurs when the user clicks Open in the file dialog box.
          * Check to see if the photo size is too large for the database.
          * If so, reject the file and inform the user.
@@ -99,7 +107,7 @@ namespace DBWizard
 
             //Chunk file into bytes.
             //If file > 2147483647 bytes long, reject file.
-            dickpic = ObjectToByteArray(student_pictureBox.Image);
+            dickpic = ImageToByteArray(student_pictureBox.Image);
             if (dickpic.Length >= 2147483647) //THAT'S WHAT SHE SAID
             {
                 MessageBox.Show("The selected student photo size is too large. Choose a smaller photo size or shrink the photo.");
@@ -119,6 +127,7 @@ namespace DBWizard
             byte[] dickpic;
 
             //Perform sanity check, ensure all data is filled except picture
+            this.Validate();
 
             // Check to see if any control is in error.
             foreach (Control c in errorProvider1.ContainerControl.Controls)
@@ -130,13 +139,16 @@ namespace DBWizard
                 }
             }
 
-            //TODO: Add Check - if pic is not default pic,
-            //Validate the picture is under 2147483647 characters in length.
-            dickpic = ObjectToByteArray(student_pictureBox.Image);
-            if(dickpic.Length >= 2147483647) //THAT'S WHAT SHE SAID
+            //if pic is not default pic,
+            if(student_pictureBox.Tag.ToString() != DEFAULT_PIC_TAG)
             {
-                MessageBox.Show("The selected student photo size is too large. Choose a smaller photo size or shrink the photo.");
-                return;
+                //Validate the picture is under 2147483647 characters in length.
+                dickpic = ImageToByteArray(student_pictureBox.Image);
+                if (dickpic.Length >= 2147483647) //THAT'S WHAT SHE SAID
+                {
+                    MessageBox.Show("The selected student photo size is too large. Choose a smaller photo size or shrink the photo.");
+                    return;
+                }
             }
 
             //Collect form data in student object
@@ -151,10 +163,10 @@ namespace DBWizard
             student.school_id = schoolComboBox.SelectedIndex + 1;
             student.GradeLevel = gradeLevelComboBox.Text;
 
-            if (student_pictureBox.Tag.ToString() == "DefaultImage")
+            if (student_pictureBox.Tag.ToString() == DEFAULT_PIC_TAG)
                 student.photo = null;
             else
-                student.photo = ObjectToByteArray(student_pictureBox.Image);
+                student.photo = ImageToByteArray(student_pictureBox.Image);
 
             //collect parent
             Parent parent = new Parent();
@@ -187,35 +199,32 @@ namespace DBWizard
          * Also used to see if the photo is too large for the db blob type.
          * INPUT: Object
          * OUPUT byte[] array
+         * https://stackoverflow.com/questions/3801275/how-to-convert-image-to-byte-array
          */
-        private byte[] ObjectToByteArray(Object obj)
+        private byte[] ImageToByteArray(Image imageIn)
         {
-            if (obj == null)
+            if (imageIn == null)
                 return null;
 
-            BinaryFormatter bf = new BinaryFormatter();
-            MemoryStream ms = new MemoryStream();
-            bf.Serialize(ms, obj);
-
-            return ms.ToArray();
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
         }
 
         /* Convert student photo from byte array to object.
          * Convert a byte array to an Object
          * INPUT: byte[] array
-         * OUTPUT: object
+         * OUTPUT: Image
+         * https://stackoverflow.com/questions/9173904/byte-array-to-image-conversion
          */
-        private Object ByteArrayToObject(byte[] arrBytes)
-
+        private Image ByteArrayToImage(byte[] arrBytes)
         {
-            MemoryStream memStream = new MemoryStream();
-            BinaryFormatter binForm = new BinaryFormatter();
-
-            memStream.Write(arrBytes, 0, arrBytes.Length);
-            memStream.Seek(0, SeekOrigin.Begin);
-            Object obj = (Object)binForm.Deserialize(memStream);
-
-            return obj;
+            using (var ms = new MemoryStream(arrBytes))
+            {
+                return Image.FromStream(ms);
+            }
         }
 
         // Basic input validation on a string given a textbox control
@@ -292,13 +301,6 @@ namespace DBWizard
 
         }
 
-        //TODO: Remove Chaos Monkey button prior to release
-        private void btnChaosMonkey_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("CHAOS MONKEY");
-            return;
-        }
-
         //Button to clear the form, exactly as it says on the tin.
         private void clear_button_Click(object sender, EventArgs e)
         {
@@ -311,7 +313,7 @@ namespace DBWizard
          */
         private void ClearForm()
         {
-            foreach(Control c in panel1.Controls)
+            foreach(Control c in this.Controls)
             {
                 if (c is TextBox)
                 {
@@ -343,7 +345,7 @@ namespace DBWizard
                 {
                     PictureBox pb = (PictureBox)c;
                     pb.Image = Properties.Resources.student;
-                    pb.Tag = "DefaultImage";
+                    pb.Tag = DEFAULT_PIC_TAG;
                 }
             } // foreach
 
@@ -427,8 +429,8 @@ namespace DBWizard
             studentDbID.Value = foundStudent.id;
             lastNameTextBox.Text = foundStudent.LastName;
             firstNameTextBox.Text = foundStudent.FirstName;
-            programComboBox.SelectedIndex = foundStudent.program_id;
-            schoolComboBox.SelectedIndex = foundStudent.school_id;
+            programComboBox.SelectedIndex = foundStudent.program_id-1;
+            schoolComboBox.SelectedIndex = foundStudent.school_id-1;
             addressTextBox.Text = foundStudent.address;
             student_idTextBox.Text = foundStudent.student_id;
             dob_dateTimePicker.Value = DateTime.Parse(foundStudent.DOB);
@@ -437,8 +439,10 @@ namespace DBWizard
             genderComboBox.Text = foundStudent.gender;
             gradeLevelComboBox.Text = foundStudent.GradeLevel;
 
-            //TODO: Test
-            student_pictureBox.Image = (foundStudent.photo != null) ? (Image)ByteArrayToObject(foundStudent.photo) : Properties.Resources.student;
+            //If the found student photo is not null, convert it to an image.
+            //else, set the student picture box to the default image.
+            //TODO: Test to see if pictureBox.tag needs updating here.
+            student_pictureBox.Image = (foundStudent.photo != null) ? ByteArrayToImage(foundStudent.photo) : Properties.Resources.student;
 
             //Now populate the parent.
             Parent stuParent = new Parent();

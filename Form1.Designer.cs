@@ -55,7 +55,6 @@
             this.exitsavesDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.student_pictureBox = new System.Windows.Forms.PictureBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.student_idTextBox = new System.Windows.Forms.TextBox();
             this.dob_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -77,12 +76,11 @@
             this.search_textBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
-            this.btnChaosMonkey = new System.Windows.Forms.Button();
             this.foundStudents_comboBox = new System.Windows.Forms.ComboBox();
             this.lblFoundStudents = new System.Windows.Forms.Label();
             this.studentDbID = new System.Windows.Forms.NumericUpDown();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.parentDbID = new System.Windows.Forms.NumericUpDown();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             lastNameLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             student_idLabel = new System.Windows.Forms.Label();
@@ -99,13 +97,12 @@
             this.topTableLayoutPanel.SuspendLayout();
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.parent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lastNameLabel
@@ -114,7 +111,7 @@
             lastNameLabel.AutoSize = true;
             lastNameLabel.BackColor = System.Drawing.Color.Transparent;
             lastNameLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lastNameLabel.Location = new System.Drawing.Point(477, 6);
+            lastNameLabel.Location = new System.Drawing.Point(440, 41);
             lastNameLabel.Name = "lastNameLabel";
             lastNameLabel.Size = new System.Drawing.Size(93, 26);
             lastNameLabel.TabIndex = 3;
@@ -126,7 +123,7 @@
             firstNameLabel.AutoSize = true;
             firstNameLabel.BackColor = System.Drawing.Color.Transparent;
             firstNameLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            firstNameLabel.Location = new System.Drawing.Point(245, 6);
+            firstNameLabel.Location = new System.Drawing.Point(208, 41);
             firstNameLabel.Name = "firstNameLabel";
             firstNameLabel.Size = new System.Drawing.Size(97, 26);
             firstNameLabel.TabIndex = 4;
@@ -138,7 +135,7 @@
             student_idLabel.AutoSize = true;
             student_idLabel.BackColor = System.Drawing.Color.Transparent;
             student_idLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            student_idLabel.Location = new System.Drawing.Point(42, 182);
+            student_idLabel.Location = new System.Drawing.Point(5, 217);
             student_idLabel.Name = "student_idLabel";
             student_idLabel.Size = new System.Drawing.Size(93, 26);
             student_idLabel.TabIndex = 6;
@@ -150,7 +147,7 @@
             dOBLabel.AutoSize = true;
             dOBLabel.BackColor = System.Drawing.Color.Transparent;
             dOBLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dOBLabel.Location = new System.Drawing.Point(245, 78);
+            dOBLabel.Location = new System.Drawing.Point(208, 113);
             dOBLabel.Name = "dOBLabel";
             dOBLabel.Size = new System.Drawing.Size(49, 26);
             dOBLabel.TabIndex = 8;
@@ -162,7 +159,7 @@
             programNameLabel.AutoSize = true;
             programNameLabel.BackColor = System.Drawing.Color.Transparent;
             programNameLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            programNameLabel.Location = new System.Drawing.Point(477, 78);
+            programNameLabel.Location = new System.Drawing.Point(440, 113);
             programNameLabel.Name = "programNameLabel";
             programNameLabel.Size = new System.Drawing.Size(79, 26);
             programNameLabel.TabIndex = 10;
@@ -174,7 +171,7 @@
             addressLabel.AutoSize = true;
             addressLabel.BackColor = System.Drawing.Color.Transparent;
             addressLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            addressLabel.Location = new System.Drawing.Point(245, 220);
+            addressLabel.Location = new System.Drawing.Point(208, 255);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new System.Drawing.Size(74, 26);
             addressLabel.TabIndex = 12;
@@ -186,7 +183,7 @@
             schoolLabel.AutoSize = true;
             schoolLabel.BackColor = System.Drawing.Color.Transparent;
             schoolLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schoolLabel.Location = new System.Drawing.Point(477, 150);
+            schoolLabel.Location = new System.Drawing.Point(440, 185);
             schoolLabel.Name = "schoolLabel";
             schoolLabel.Size = new System.Drawing.Size(64, 26);
             schoolLabel.TabIndex = 14;
@@ -198,7 +195,7 @@
             genderLabel.AutoSize = true;
             genderLabel.BackColor = System.Drawing.Color.Transparent;
             genderLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            genderLabel.Location = new System.Drawing.Point(245, 150);
+            genderLabel.Location = new System.Drawing.Point(208, 185);
             genderLabel.Name = "genderLabel";
             genderLabel.Size = new System.Drawing.Size(69, 26);
             genderLabel.TabIndex = 16;
@@ -210,7 +207,7 @@
             gradeLevelLabel.AutoSize = true;
             gradeLevelLabel.BackColor = System.Drawing.Color.Transparent;
             gradeLevelLabel.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gradeLevelLabel.Location = new System.Drawing.Point(477, 220);
+            gradeLevelLabel.Location = new System.Drawing.Point(440, 255);
             gradeLevelLabel.Name = "gradeLevelLabel";
             gradeLevelLabel.Size = new System.Drawing.Size(101, 26);
             gradeLevelLabel.TabIndex = 18;
@@ -258,15 +255,19 @@
             // 
             // topTableLayoutPanel
             // 
-            this.topTableLayoutPanel.ColumnCount = 1;
+            this.topTableLayoutPanel.ColumnCount = 3;
             this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.topTableLayoutPanel.Controls.Add(this.mainMenuStrip, 0, 0);
+            this.topTableLayoutPanel.Controls.Add(this.studentDbID, 1, 0);
+            this.topTableLayoutPanel.Controls.Add(this.parentDbID, 2, 0);
             this.topTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.topTableLayoutPanel.Name = "topTableLayoutPanel";
             this.topTableLayoutPanel.RowCount = 1;
             this.topTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.topTableLayoutPanel.Size = new System.Drawing.Size(1078, 35);
+            this.topTableLayoutPanel.Size = new System.Drawing.Size(1064, 35);
             this.topTableLayoutPanel.TabIndex = 0;
             // 
             // mainMenuStrip
@@ -280,7 +281,7 @@
             this.fileToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(1078, 33);
+            this.mainMenuStrip.Size = new System.Drawing.Size(968, 33);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
             // 
@@ -299,14 +300,14 @@
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
             this.newStudentToolStripMenuItem.Text = "&New Student";
             this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // saveStudentToolStripMenuItem
             // 
             this.saveStudentToolStripMenuItem.Name = "saveStudentToolStripMenuItem";
-            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
             this.saveStudentToolStripMenuItem.Text = "&Save Student";
             this.saveStudentToolStripMenuItem.Click += new System.EventHandler(this.save_button_Click);
             // 
@@ -316,7 +317,7 @@
             this.studentBySchoolToolStripMenuItem,
             this.studentsByProgramToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
             // studentBySchoolToolStripMenuItem
@@ -336,14 +337,14 @@
             // exitWithoutSavingToolStripMenuItem
             // 
             this.exitWithoutSavingToolStripMenuItem.Name = "exitWithoutSavingToolStripMenuItem";
-            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
             this.exitWithoutSavingToolStripMenuItem.Text = "Exit without saving";
             this.exitWithoutSavingToolStripMenuItem.Click += new System.EventHandler(this.exitWithoutSavingToolStripMenuItem_Click);
             // 
             // exitsavesDataToolStripMenuItem
             // 
             this.exitsavesDataToolStripMenuItem.Name = "exitsavesDataToolStripMenuItem";
-            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
             this.exitsavesDataToolStripMenuItem.Text = "E&xit (saves data)";
             this.exitsavesDataToolStripMenuItem.Click += new System.EventHandler(this.exitsavesDataToolStripMenuItem_Click);
             // 
@@ -352,7 +353,7 @@
             this.student_pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.student_pictureBox.BackColor = System.Drawing.SystemColors.Window;
             this.student_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("student_pictureBox.Image")));
-            this.student_pictureBox.Location = new System.Drawing.Point(46, 22);
+            this.student_pictureBox.Location = new System.Drawing.Point(9, 57);
             this.student_pictureBox.Name = "student_pictureBox";
             this.student_pictureBox.Size = new System.Drawing.Size(156, 156);
             this.student_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -366,22 +367,18 @@
             this.lastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "LastName", true));
             this.lastNameTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameTextBox.Location = new System.Drawing.Point(481, 37);
+            this.lastNameTextBox.Location = new System.Drawing.Point(444, 72);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(167, 30);
             this.lastNameTextBox.TabIndex = 4;
             this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "FirstName", true));
             this.firstNameTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameTextBox.Location = new System.Drawing.Point(248, 37);
+            this.firstNameTextBox.Location = new System.Drawing.Point(211, 72);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(177, 30);
             this.firstNameTextBox.TabIndex = 5;
@@ -392,7 +389,7 @@
             this.student_idTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.student_idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "student_id", true));
             this.student_idTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.student_idTextBox.Location = new System.Drawing.Point(46, 215);
+            this.student_idTextBox.Location = new System.Drawing.Point(9, 250);
             this.student_idTextBox.Name = "student_idTextBox";
             this.student_idTextBox.Size = new System.Drawing.Size(135, 30);
             this.student_idTextBox.TabIndex = 7;
@@ -403,7 +400,7 @@
             this.dob_dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dob_dateTimePicker.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dob_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dob_dateTimePicker.Location = new System.Drawing.Point(249, 109);
+            this.dob_dateTimePicker.Location = new System.Drawing.Point(212, 144);
             this.dob_dateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dob_dateTimePicker.Name = "dob_dateTimePicker";
             this.dob_dateTimePicker.Size = new System.Drawing.Size(135, 30);
@@ -416,7 +413,7 @@
             this.programComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programComboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.programComboBox.FormattingEnabled = true;
-            this.programComboBox.Location = new System.Drawing.Point(481, 105);
+            this.programComboBox.Location = new System.Drawing.Point(444, 140);
             this.programComboBox.Name = "programComboBox";
             this.programComboBox.Size = new System.Drawing.Size(177, 34);
             this.programComboBox.TabIndex = 11;
@@ -427,7 +424,7 @@
             this.addressTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "address", true));
             this.addressTextBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTextBox.Location = new System.Drawing.Point(249, 251);
+            this.addressTextBox.Location = new System.Drawing.Point(212, 286);
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(167, 66);
@@ -441,7 +438,7 @@
             this.schoolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.schoolComboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schoolComboBox.FormattingEnabled = true;
-            this.schoolComboBox.Location = new System.Drawing.Point(481, 180);
+            this.schoolComboBox.Location = new System.Drawing.Point(444, 215);
             this.schoolComboBox.Name = "schoolComboBox";
             this.schoolComboBox.Size = new System.Drawing.Size(177, 34);
             this.schoolComboBox.TabIndex = 15;
@@ -457,7 +454,7 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(249, 180);
+            this.genderComboBox.Location = new System.Drawing.Point(212, 215);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(121, 34);
             this.genderComboBox.TabIndex = 17;
@@ -484,7 +481,7 @@
             "10",
             "11",
             "12"});
-            this.gradeLevelComboBox.Location = new System.Drawing.Point(481, 251);
+            this.gradeLevelComboBox.Location = new System.Drawing.Point(444, 286);
             this.gradeLevelComboBox.Name = "gradeLevelComboBox";
             this.gradeLevelComboBox.Size = new System.Drawing.Size(121, 34);
             this.gradeLevelComboBox.TabIndex = 19;
@@ -494,7 +491,7 @@
             // 
             this.save_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.save_button.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_button.Location = new System.Drawing.Point(84, 366);
+            this.save_button.Location = new System.Drawing.Point(47, 401);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(104, 54);
             this.save_button.TabIndex = 20;
@@ -516,7 +513,7 @@
             this.parent_groupBox.Controls.Add(this.parent_lastNameTextBox);
             this.parent_groupBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.parent_groupBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.parent_groupBox.Location = new System.Drawing.Point(693, 179);
+            this.parent_groupBox.Location = new System.Drawing.Point(656, 214);
             this.parent_groupBox.Name = "parent_groupBox";
             this.parent_groupBox.Size = new System.Drawing.Size(348, 249);
             this.parent_groupBox.TabIndex = 21;
@@ -580,7 +577,7 @@
             // 
             this.clear_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.clear_button.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_button.Location = new System.Drawing.Point(248, 366);
+            this.clear_button.Location = new System.Drawing.Point(211, 401);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(116, 54);
             this.clear_button.TabIndex = 22;
@@ -592,7 +589,7 @@
             // 
             this.delete_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.delete_button.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_button.Location = new System.Drawing.Point(425, 366);
+            this.delete_button.Location = new System.Drawing.Point(388, 401);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(104, 54);
             this.delete_button.TabIndex = 23;
@@ -614,7 +611,7 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.BackColor = System.Drawing.Color.Transparent;
             this.lblSearch.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(715, 4);
+            this.lblSearch.Location = new System.Drawing.Point(678, 39);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(226, 26);
             this.lblSearch.TabIndex = 24;
@@ -624,7 +621,7 @@
             // 
             this.search_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.search_textBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_textBox.Location = new System.Drawing.Point(719, 45);
+            this.search_textBox.Location = new System.Drawing.Point(682, 80);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(284, 30);
             this.search_textBox.TabIndex = 25;
@@ -635,25 +632,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnChaosMonkey
-            // 
-            this.btnChaosMonkey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnChaosMonkey.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChaosMonkey.Location = new System.Drawing.Point(564, 366);
-            this.btnChaosMonkey.Name = "btnChaosMonkey";
-            this.btnChaosMonkey.Size = new System.Drawing.Size(106, 54);
-            this.btnChaosMonkey.TabIndex = 26;
-            this.btnChaosMonkey.Text = "CHAOS";
-            this.btnChaosMonkey.UseVisualStyleBackColor = true;
-            this.btnChaosMonkey.Visible = false;
-            this.btnChaosMonkey.Click += new System.EventHandler(this.btnChaosMonkey_Click);
-            // 
             // foundStudents_comboBox
             // 
             this.foundStudents_comboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.foundStudents_comboBox.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foundStudents_comboBox.FormattingEnabled = true;
-            this.foundStudents_comboBox.Location = new System.Drawing.Point(719, 126);
+            this.foundStudents_comboBox.Location = new System.Drawing.Point(682, 161);
             this.foundStudents_comboBox.Name = "foundStudents_comboBox";
             this.foundStudents_comboBox.Size = new System.Drawing.Size(284, 34);
             this.foundStudents_comboBox.TabIndex = 27;
@@ -666,7 +650,7 @@
             this.lblFoundStudents.AutoSize = true;
             this.lblFoundStudents.BackColor = System.Drawing.Color.Transparent;
             this.lblFoundStudents.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoundStudents.Location = new System.Drawing.Point(715, 87);
+            this.lblFoundStudents.Location = new System.Drawing.Point(678, 122);
             this.lblFoundStudents.Name = "lblFoundStudents";
             this.lblFoundStudents.Size = new System.Drawing.Size(128, 26);
             this.lblFoundStudents.TabIndex = 28;
@@ -675,68 +659,58 @@
             // studentDbID
             // 
             this.studentDbID.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentDbID.Location = new System.Drawing.Point(10, 42);
+            this.studentDbID.Location = new System.Drawing.Point(971, 3);
             this.studentDbID.Name = "studentDbID";
-            this.studentDbID.Size = new System.Drawing.Size(47, 30);
+            this.studentDbID.Size = new System.Drawing.Size(40, 30);
             this.studentDbID.TabIndex = 8;
             this.studentDbID.TabStop = false;
             this.studentDbID.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.lblFoundStudents);
-            this.panel1.Controls.Add(this.foundStudents_comboBox);
-            this.panel1.Controls.Add(student_idLabel);
-            this.panel1.Controls.Add(this.btnChaosMonkey);
-            this.panel1.Controls.Add(this.search_textBox);
-            this.panel1.Controls.Add(this.lblSearch);
-            this.panel1.Controls.Add(this.delete_button);
-            this.panel1.Controls.Add(this.clear_button);
-            this.panel1.Controls.Add(this.parent_groupBox);
-            this.panel1.Controls.Add(this.save_button);
-            this.panel1.Controls.Add(gradeLevelLabel);
-            this.panel1.Controls.Add(this.gradeLevelComboBox);
-            this.panel1.Controls.Add(genderLabel);
-            this.panel1.Controls.Add(this.genderComboBox);
-            this.panel1.Controls.Add(schoolLabel);
-            this.panel1.Controls.Add(this.schoolComboBox);
-            this.panel1.Controls.Add(addressLabel);
-            this.panel1.Controls.Add(this.addressTextBox);
-            this.panel1.Controls.Add(this.programComboBox);
-            this.panel1.Controls.Add(programNameLabel);
-            this.panel1.Controls.Add(this.dob_dateTimePicker);
-            this.panel1.Controls.Add(dOBLabel);
-            this.panel1.Controls.Add(this.student_idTextBox);
-            this.panel1.Controls.Add(firstNameLabel);
-            this.panel1.Controls.Add(this.firstNameTextBox);
-            this.panel1.Controls.Add(lastNameLabel);
-            this.panel1.Controls.Add(this.lastNameTextBox);
-            this.panel1.Controls.Add(this.student_pictureBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 35);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1078, 562);
-            this.panel1.TabIndex = 29;
-            // 
             // parentDbID
             // 
-            this.parentDbID.Location = new System.Drawing.Point(928, 42);
+            this.parentDbID.Location = new System.Drawing.Point(1017, 3);
             this.parentDbID.Name = "parentDbID";
-            this.parentDbID.Size = new System.Drawing.Size(47, 26);
+            this.parentDbID.Size = new System.Drawing.Size(44, 26);
             this.parentDbID.TabIndex = 29;
             this.parentDbID.Visible = false;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 597);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.studentDbID);
+            this.ClientSize = new System.Drawing.Size(1064, 597);
+            this.Controls.Add(this.lblFoundStudents);
+            this.Controls.Add(this.foundStudents_comboBox);
             this.Controls.Add(this.topTableLayoutPanel);
-            this.Controls.Add(this.parentDbID);
+            this.Controls.Add(student_idLabel);
+            this.Controls.Add(this.student_pictureBox);
+            this.Controls.Add(this.lastNameTextBox);
+            this.Controls.Add(this.search_textBox);
+            this.Controls.Add(lastNameLabel);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.firstNameTextBox);
+            this.Controls.Add(this.delete_button);
+            this.Controls.Add(firstNameLabel);
+            this.Controls.Add(this.clear_button);
+            this.Controls.Add(this.student_idTextBox);
+            this.Controls.Add(this.parent_groupBox);
+            this.Controls.Add(dOBLabel);
+            this.Controls.Add(this.save_button);
+            this.Controls.Add(this.dob_dateTimePicker);
+            this.Controls.Add(gradeLevelLabel);
+            this.Controls.Add(programNameLabel);
+            this.Controls.Add(this.gradeLevelComboBox);
+            this.Controls.Add(this.programComboBox);
+            this.Controls.Add(genderLabel);
+            this.Controls.Add(this.addressTextBox);
+            this.Controls.Add(this.genderComboBox);
+            this.Controls.Add(addressLabel);
+            this.Controls.Add(schoolLabel);
+            this.Controls.Add(this.schoolComboBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
             this.MinimumSize = new System.Drawing.Size(1070, 653);
@@ -748,15 +722,13 @@
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.parent_groupBox.ResumeLayout(false);
             this.parent_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -797,12 +769,10 @@
         private System.Windows.Forms.TextBox search_textBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTips;
-        private System.Windows.Forms.Button btnChaosMonkey;
         private System.Windows.Forms.Label lblFoundStudents;
         private System.Windows.Forms.ComboBox foundStudents_comboBox;
         private System.Windows.Forms.NumericUpDown studentDbID;
         private System.Windows.Forms.ToolStripMenuItem exitWithoutSavingToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown parentDbID;
     }
 }
