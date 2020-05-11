@@ -97,8 +97,9 @@ namespace DBWizard
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                string strQuery = "UPDATE Students SET student_id = @student_id, FirstName = @First_Name, LastName = @Last_Name," +
-                "DOB = @_dob, Gender = @_gender, Address = @_address, GradeLevel = @Grade_Level, Photo = @_photo " +
+                string strQuery = "UPDATE Students SET student_id = @student_id, FirstName = @First_Name, " +
+                "LastName = @Last_Name, DOB = @_dob, Gender = @_gender, Address = @_address, program_id=@_program_id, " +
+                "school_id=@_school_id, GradeLevel = @Grade_Level, Photo = @_photo " +
                 "WHERE id = @_id;";
 
                 cnn.Execute(strQuery, new
@@ -110,6 +111,8 @@ namespace DBWizard
                     _dob = stu.DOB,
                     _gender = stu.gender,
                     _address = stu.address,
+                    _program_id = stu.program_id,
+                    _school_id = stu.school_id,
                     Grade_Level = stu.GradeLevel,
                     _photo = stu.photo ?? null
                 });
