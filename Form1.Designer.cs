@@ -57,6 +57,7 @@
             this.parentDbID = new System.Windows.Forms.NumericUpDown();
             this.student_pictureBox = new System.Windows.Forms.PictureBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.student_idTextBox = new System.Windows.Forms.TextBox();
             this.dob_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -80,7 +81,6 @@
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.foundStudents_comboBox = new System.Windows.Forms.ComboBox();
             this.lblFoundStudents = new System.Windows.Forms.Label();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             lastNameLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             student_idLabel = new System.Windows.Forms.Label();
@@ -99,10 +99,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.parent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lastNameLabel
@@ -281,7 +281,7 @@
             this.fileToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(968, 35);
+            this.mainMenuStrip.Size = new System.Drawing.Size(968, 33);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
             // 
@@ -391,6 +391,10 @@
             this.lastNameTextBox.Size = new System.Drawing.Size(167, 30);
             this.lastNameTextBox.TabIndex = 1;
             this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // firstNameTextBox
             // 
@@ -513,7 +517,7 @@
             this.save_button.Location = new System.Drawing.Point(47, 401);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(104, 54);
-            this.save_button.TabIndex = 9;
+            this.save_button.TabIndex = 10;
             this.save_button.Text = "Save";
             this.save_button.UseVisualStyleBackColor = true;
             this.save_button.Click += new System.EventHandler(this.save_button_Click);
@@ -535,7 +539,7 @@
             this.parent_groupBox.Location = new System.Drawing.Point(656, 214);
             this.parent_groupBox.Name = "parent_groupBox";
             this.parent_groupBox.Size = new System.Drawing.Size(348, 249);
-            this.parent_groupBox.TabIndex = 21;
+            this.parent_groupBox.TabIndex = 9;
             this.parent_groupBox.TabStop = false;
             this.parent_groupBox.Text = "Parent Information";
             // 
@@ -599,7 +603,7 @@
             this.clear_button.Location = new System.Drawing.Point(211, 401);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(116, 54);
-            this.clear_button.TabIndex = 10;
+            this.clear_button.TabIndex = 11;
             this.clear_button.Text = "Clear form";
             this.clear_button.UseVisualStyleBackColor = true;
             this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
@@ -611,7 +615,7 @@
             this.delete_button.Location = new System.Drawing.Point(388, 401);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(104, 54);
-            this.delete_button.TabIndex = 11;
+            this.delete_button.TabIndex = 12;
             this.delete_button.Text = "Delete";
             this.delete_button.UseVisualStyleBackColor = true;
             this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
@@ -643,7 +647,7 @@
             this.search_textBox.Location = new System.Drawing.Point(682, 80);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(284, 30);
-            this.search_textBox.TabIndex = 12;
+            this.search_textBox.TabIndex = 13;
             this.toolTips.SetToolTip(this.search_textBox, "Type last name of student and hit enter");
             this.search_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_textBox_KeyDown);
             // 
@@ -659,7 +663,7 @@
             this.foundStudents_comboBox.Location = new System.Drawing.Point(682, 161);
             this.foundStudents_comboBox.Name = "foundStudents_comboBox";
             this.foundStudents_comboBox.Size = new System.Drawing.Size(284, 34);
-            this.foundStudents_comboBox.TabIndex = 27;
+            this.foundStudents_comboBox.TabIndex = 14;
             this.foundStudents_comboBox.SelectionChangeCommitted += new System.EventHandler(this.foundStudents_comboBox_SelectionChangeCommitted);
             this.foundStudents_comboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.foundStudents_comboBox_KeyDown);
             // 
@@ -674,10 +678,6 @@
             this.lblFoundStudents.Size = new System.Drawing.Size(128, 26);
             this.lblFoundStudents.TabIndex = 28;
             this.lblFoundStudents.Text = "Found Students:";
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // Form1
             // 
@@ -725,11 +725,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.parent_groupBox.ResumeLayout(false);
             this.parent_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
