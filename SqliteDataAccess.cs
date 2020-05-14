@@ -254,6 +254,73 @@ namespace DBWizard
         }
         #endregion
 
+        #region reports
+        /* Gets a list of all students with the provided program id.
+         * INPUT: String last name
+         * OUTPUT List<Student>
+         */
+        public List<Student> GetStudentsByProgram(int program_id_in)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "SELECT * FROM students WHERE program_id=@ProgramID";
+
+                var output = cnn.Query<Student>(strQuery, new { ProgramID = program_id_in });
+                return output.ToList();
+            }
+        }
+
+        /* Gets a list of all students with the provided school id.
+         * INPUT: String last name
+         * OUTPUT List<Student>
+         */
+        public List<Student> GetStudentsBySchool(int school_id_in)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "SELECT * FROM students WHERE school_id=@SchoolID";
+
+                var output = cnn.Query<Student>(strQuery, new { SchoolID = school_id_in });
+                return output.ToList();
+            }
+        }
+
+        /* Gets a list of all students with the provided school id.
+         * INPUT: String last name
+         * OUTPUT List<Student>
+         */
+        public List<ReportFull> GetFullDBDump()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = @"
+SELECT 
+id,
+student_id,
+Students.FirstName,
+Students.LastName,
+DOB,
+gender,
+address,
+GradeLevel,
+Parents.FirstName as ParentFirstName,
+Parents.LastName as ParentLastName,
+PhoneNumber as ParentPhoneNumber,
+EmailAddress as ParentEmailAddress,
+Programs.name as ProgramName,
+Schools.name as SchoolName
+from students
+INNER JOIN Parents on Students.parent_id = Parents.parent_id
+INNER JOIN Programs on Students.program_id = Programs.program_id
+INNER JOIN Schools on Students.school_id = Schools.school_id
+";
+
+                var output = cnn.Query<ReportFull>(strQuery);
+                return output.ToList();
+            }
+        }
+
+        #endregion
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
