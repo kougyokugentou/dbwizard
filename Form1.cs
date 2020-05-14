@@ -1,4 +1,5 @@
-﻿using DBWizard.Models;
+﻿using CsvHelper;
+using DBWizard.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,7 +92,7 @@ namespace DBWizard
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to read selected file, try again.");
+                    MessageBox.Show("Unable to read selected file, try again.", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
                     return;
                 }
             }
@@ -110,7 +111,7 @@ namespace DBWizard
             dickpic = ImageToByteArray(student_pictureBox.Image);
             if (dickpic.Length >= 2147483647) //THAT'S WHAT SHE SAID
             {
-                MessageBox.Show("The selected student photo size is too large. Choose a smaller photo size or shrink the photo.");
+                MessageBox.Show("The selected student photo size is too large. Choose a smaller photo size or shrink the photo.", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
         }
@@ -134,7 +135,7 @@ namespace DBWizard
             {
                 if (errorProvider1.GetError(c) != "")
                 {
-                    MessageBox.Show("Please fix the errors on the form!");
+                    MessageBox.Show("Student not saved due to errors on the form!", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
                     return;
                 }
             }
@@ -146,7 +147,7 @@ namespace DBWizard
                 dickpic = ImageToByteArray(student_pictureBox.Image);
                 if (dickpic.Length >= 2147483647) //THAT'S WHAT SHE SAID
                 {
-                    MessageBox.Show("The selected student photo size is too large. Choose a smaller photo size or shrink the photo.");
+                    MessageBox.Show("The selected student photo size is too large. Choose a smaller photo size or shrink the photo.", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
                     return;
                 }
             }
@@ -184,13 +185,13 @@ namespace DBWizard
 
                 SqliteDataAccess.UpdateStudent(student);
                 SqliteDataAccess.UpdateParent(parent);
-                MessageBox.Show("Student and parent successfully updated.");
+                MessageBox.Show("Student and parent successfully updated.", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             else //new student
             {
                 student.parent_id = SqliteDataAccess.InsertNewParent(parent);
                 SqliteDataAccess.InsertNewStudent(student);
-                MessageBox.Show("Student successfully added");
+                MessageBox.Show("Student successfully added", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
                 ClearForm();
             }
         }
@@ -480,7 +481,7 @@ namespace DBWizard
 
             //Dispose of the objects.
             ClearForm();
-            MessageBox.Show("Student deleted from database.");
+            MessageBox.Show("Student deleted from database.", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
 
         #region redundancy
@@ -495,6 +496,7 @@ namespace DBWizard
 
         private void exitsavesDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             //Error handling happens on the save_button_Click event, so no need to do it here.
             save_button_Click(save_button, EventArgs.Empty);
 
@@ -503,16 +505,33 @@ namespace DBWizard
         }
         #endregion
 
-        private void studentBySchoolToolStripMenuItem_Click(object sender, EventArgs e)
+        /* Exports the data from the database into readable format.
+         * INPUT: no args
+         * OUTPUT: File to disk.
+         */
+        private void exportAllDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This function will generate a report of students by school.\nIt's not done yet.");
-            return;
-        }
+            //Build the default filename
+            saveFileDialogReport.FileName = DateTime.Now.ToString("yy.MM.dd") + "-report.csv";
 
-        private void studentsByProgramToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This function will generate a report of students by program.\nIt's not done yet.");
-            return;
+            if (saveFileDialogReport.ShowDialog() == DialogResult.OK
+            && saveFileDialogReport.FileName != "")
+            {
+                string filename = saveFileDialogReport.FileName;
+
+                List<ReportFull> report = new List<ReportFull>();
+                report = SqliteDataAccess.GetFullDBDump();
+
+
+                TextWriter textWriter = new StreamWriter(filename);
+                CsvWriter csvWriter = new CsvWriter(textWriter);
+                csvWriter.WriteRecords(report);
+
+                textWriter.Close();
+                MessageBox.Show("Report Generated", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+            }
+
         }
     } //Form1
 }

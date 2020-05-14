@@ -48,16 +48,12 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentBySchoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentsByProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitWithoutSavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitsavesDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentDbID = new System.Windows.Forms.NumericUpDown();
             this.parentDbID = new System.Windows.Forms.NumericUpDown();
             this.student_pictureBox = new System.Windows.Forms.PictureBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.student_idTextBox = new System.Windows.Forms.TextBox();
             this.dob_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -81,6 +77,9 @@
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.foundStudents_comboBox = new System.Windows.Forms.ComboBox();
             this.lblFoundStudents = new System.Windows.Forms.Label();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.exportAllDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialogReport = new System.Windows.Forms.SaveFileDialog();
             lastNameLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             student_idLabel = new System.Windows.Forms.Label();
@@ -99,10 +98,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.parent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lastNameLabel
@@ -290,7 +289,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newStudentToolStripMenuItem,
             this.saveStudentToolStripMenuItem,
-            this.reportsToolStripMenuItem,
+            this.exportAllDataToolStripMenuItem,
             this.exitWithoutSavingToolStripMenuItem,
             this.exitsavesDataToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -300,51 +299,28 @@
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.newStudentToolStripMenuItem.Text = "&New Student";
             this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // saveStudentToolStripMenuItem
             // 
             this.saveStudentToolStripMenuItem.Name = "saveStudentToolStripMenuItem";
-            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.saveStudentToolStripMenuItem.Text = "&Save Student";
             this.saveStudentToolStripMenuItem.Click += new System.EventHandler(this.save_button_Click);
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentBySchoolToolStripMenuItem,
-            this.studentsByProgramToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // studentBySchoolToolStripMenuItem
-            // 
-            this.studentBySchoolToolStripMenuItem.Name = "studentBySchoolToolStripMenuItem";
-            this.studentBySchoolToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.studentBySchoolToolStripMenuItem.Text = "Students by school";
-            this.studentBySchoolToolStripMenuItem.Click += new System.EventHandler(this.studentBySchoolToolStripMenuItem_Click);
-            // 
-            // studentsByProgramToolStripMenuItem
-            // 
-            this.studentsByProgramToolStripMenuItem.Name = "studentsByProgramToolStripMenuItem";
-            this.studentsByProgramToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
-            this.studentsByProgramToolStripMenuItem.Text = "Students by program";
-            this.studentsByProgramToolStripMenuItem.Click += new System.EventHandler(this.studentsByProgramToolStripMenuItem_Click);
             // 
             // exitWithoutSavingToolStripMenuItem
             // 
             this.exitWithoutSavingToolStripMenuItem.Name = "exitWithoutSavingToolStripMenuItem";
-            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.exitWithoutSavingToolStripMenuItem.Text = "Exit without saving";
             this.exitWithoutSavingToolStripMenuItem.Click += new System.EventHandler(this.exitWithoutSavingToolStripMenuItem_Click);
             // 
             // exitsavesDataToolStripMenuItem
             // 
             this.exitsavesDataToolStripMenuItem.Name = "exitsavesDataToolStripMenuItem";
-            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.exitsavesDataToolStripMenuItem.Text = "E&xit (saves data)";
             this.exitsavesDataToolStripMenuItem.Click += new System.EventHandler(this.exitsavesDataToolStripMenuItem_Click);
             // 
@@ -391,10 +367,6 @@
             this.lastNameTextBox.Size = new System.Drawing.Size(167, 30);
             this.lastNameTextBox.TabIndex = 1;
             this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
             // 
             // firstNameTextBox
             // 
@@ -679,6 +651,23 @@
             this.lblFoundStudents.TabIndex = 28;
             this.lblFoundStudents.Text = "Found Students:";
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
+            // 
+            // exportAllDataToolStripMenuItem
+            // 
+            this.exportAllDataToolStripMenuItem.Name = "exportAllDataToolStripMenuItem";
+            this.exportAllDataToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exportAllDataToolStripMenuItem.Text = "Export All Data";
+            this.exportAllDataToolStripMenuItem.Click += new System.EventHandler(this.exportAllDataToolStripMenuItem_Click);
+            // 
+            // saveFileDialogReport
+            // 
+            this.saveFileDialogReport.DefaultExt = "CSV";
+            this.saveFileDialogReport.Filter = "CSV Files|*.csv";
+            this.saveFileDialogReport.Title = "Save Report";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -725,11 +714,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.parent_groupBox.ResumeLayout(false);
             this.parent_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -753,9 +742,6 @@
         private System.Windows.Forms.ComboBox gradeLevelComboBox;
         private System.Windows.Forms.ToolStripMenuItem newStudentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveStudentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem studentBySchoolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem studentsByProgramToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitsavesDataToolStripMenuItem;
         private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.GroupBox parent_groupBox;
@@ -775,6 +761,8 @@
         private System.Windows.Forms.NumericUpDown studentDbID;
         private System.Windows.Forms.ToolStripMenuItem exitWithoutSavingToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown parentDbID;
+        private System.Windows.Forms.ToolStripMenuItem exportAllDataToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogReport;
     }
 }
 
