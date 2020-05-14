@@ -53,6 +53,8 @@
             this.studentsByProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitWithoutSavingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitsavesDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentDbID = new System.Windows.Forms.NumericUpDown();
+            this.parentDbID = new System.Windows.Forms.NumericUpDown();
             this.student_pictureBox = new System.Windows.Forms.PictureBox();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
@@ -78,8 +80,6 @@
             this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.foundStudents_comboBox = new System.Windows.Forms.ComboBox();
             this.lblFoundStudents = new System.Windows.Forms.Label();
-            this.studentDbID = new System.Windows.Forms.NumericUpDown();
-            this.parentDbID = new System.Windows.Forms.NumericUpDown();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             lastNameLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
@@ -96,12 +96,12 @@
             emailAddressLabel = new System.Windows.Forms.Label();
             this.topTableLayoutPanel.SuspendLayout();
             this.mainMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).BeginInit();
             this.parent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -281,7 +281,7 @@
             this.fileToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(968, 33);
+            this.mainMenuStrip.Size = new System.Drawing.Size(968, 35);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
             // 
@@ -348,6 +348,25 @@
             this.exitsavesDataToolStripMenuItem.Text = "E&xit (saves data)";
             this.exitsavesDataToolStripMenuItem.Click += new System.EventHandler(this.exitsavesDataToolStripMenuItem_Click);
             // 
+            // studentDbID
+            // 
+            this.studentDbID.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentDbID.Location = new System.Drawing.Point(971, 3);
+            this.studentDbID.Name = "studentDbID";
+            this.studentDbID.Size = new System.Drawing.Size(40, 30);
+            this.studentDbID.TabIndex = 8;
+            this.studentDbID.TabStop = false;
+            this.studentDbID.Visible = false;
+            // 
+            // parentDbID
+            // 
+            this.parentDbID.Location = new System.Drawing.Point(1017, 3);
+            this.parentDbID.Name = "parentDbID";
+            this.parentDbID.Size = new System.Drawing.Size(44, 26);
+            this.parentDbID.TabIndex = 29;
+            this.parentDbID.TabStop = false;
+            this.parentDbID.Visible = false;
+            // 
             // student_pictureBox
             // 
             this.student_pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -370,7 +389,7 @@
             this.lastNameTextBox.Location = new System.Drawing.Point(444, 72);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(167, 30);
-            this.lastNameTextBox.TabIndex = 4;
+            this.lastNameTextBox.TabIndex = 1;
             this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // firstNameTextBox
@@ -381,7 +400,7 @@
             this.firstNameTextBox.Location = new System.Drawing.Point(211, 72);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(177, 30);
-            this.firstNameTextBox.TabIndex = 5;
+            this.firstNameTextBox.TabIndex = 0;
             this.firstNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // student_idTextBox
@@ -392,7 +411,7 @@
             this.student_idTextBox.Location = new System.Drawing.Point(9, 250);
             this.student_idTextBox.Name = "student_idTextBox";
             this.student_idTextBox.Size = new System.Drawing.Size(135, 30);
-            this.student_idTextBox.TabIndex = 7;
+            this.student_idTextBox.TabIndex = 6;
             this.student_idTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.student_idTextBox_Validating);
             // 
             // dob_dateTimePicker
@@ -404,7 +423,7 @@
             this.dob_dateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dob_dateTimePicker.Name = "dob_dateTimePicker";
             this.dob_dateTimePicker.Size = new System.Drawing.Size(135, 30);
-            this.dob_dateTimePicker.TabIndex = 9;
+            this.dob_dateTimePicker.TabIndex = 2;
             this.dob_dateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.dob_dateTimePicker_Validating);
             // 
             // programComboBox
@@ -416,7 +435,7 @@
             this.programComboBox.Location = new System.Drawing.Point(444, 140);
             this.programComboBox.Name = "programComboBox";
             this.programComboBox.Size = new System.Drawing.Size(177, 34);
-            this.programComboBox.TabIndex = 11;
+            this.programComboBox.TabIndex = 3;
             this.programComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // addressTextBox
@@ -428,7 +447,7 @@
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(167, 66);
-            this.addressTextBox.TabIndex = 13;
+            this.addressTextBox.TabIndex = 7;
             this.addressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // schoolComboBox
@@ -441,7 +460,7 @@
             this.schoolComboBox.Location = new System.Drawing.Point(444, 215);
             this.schoolComboBox.Name = "schoolComboBox";
             this.schoolComboBox.Size = new System.Drawing.Size(177, 34);
-            this.schoolComboBox.TabIndex = 15;
+            this.schoolComboBox.TabIndex = 5;
             this.schoolComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // genderComboBox
@@ -457,7 +476,7 @@
             this.genderComboBox.Location = new System.Drawing.Point(212, 215);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(121, 34);
-            this.genderComboBox.TabIndex = 17;
+            this.genderComboBox.TabIndex = 4;
             this.genderComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // gradeLevelComboBox
@@ -484,7 +503,7 @@
             this.gradeLevelComboBox.Location = new System.Drawing.Point(444, 286);
             this.gradeLevelComboBox.Name = "gradeLevelComboBox";
             this.gradeLevelComboBox.Size = new System.Drawing.Size(121, 34);
-            this.gradeLevelComboBox.TabIndex = 19;
+            this.gradeLevelComboBox.TabIndex = 8;
             this.gradeLevelComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // save_button
@@ -494,7 +513,7 @@
             this.save_button.Location = new System.Drawing.Point(47, 401);
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(104, 54);
-            this.save_button.TabIndex = 20;
+            this.save_button.TabIndex = 9;
             this.save_button.Text = "Save";
             this.save_button.UseVisualStyleBackColor = true;
             this.save_button.Click += new System.EventHandler(this.save_button_Click);
@@ -526,7 +545,7 @@
             this.emailAddressTextBox.Location = new System.Drawing.Point(140, 186);
             this.emailAddressTextBox.Name = "emailAddressTextBox";
             this.emailAddressTextBox.Size = new System.Drawing.Size(172, 30);
-            this.emailAddressTextBox.TabIndex = 7;
+            this.emailAddressTextBox.TabIndex = 3;
             this.toolTips.SetToolTip(this.emailAddressTextBox, "Enter a valid email address with @");
             this.emailAddressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailAddressTextBox_Validating);
             // 
@@ -546,7 +565,7 @@
             0});
             this.phoneNumberNumericUpDown.Name = "phoneNumberNumericUpDown";
             this.phoneNumberNumericUpDown.Size = new System.Drawing.Size(172, 30);
-            this.phoneNumberNumericUpDown.TabIndex = 5;
+            this.phoneNumberNumericUpDown.TabIndex = 2;
             this.toolTips.SetToolTip(this.phoneNumberNumericUpDown, "Enter 9 digit phone number with no symbols.");
             this.phoneNumberNumericUpDown.Value = new decimal(new int[] {
             1000000000,
@@ -561,7 +580,7 @@
             this.parent_firstNameTextBox.Location = new System.Drawing.Point(139, 50);
             this.parent_firstNameTextBox.Name = "parent_firstNameTextBox";
             this.parent_firstNameTextBox.Size = new System.Drawing.Size(173, 30);
-            this.parent_firstNameTextBox.TabIndex = 3;
+            this.parent_firstNameTextBox.TabIndex = 0;
             this.parent_firstNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // parent_lastNameTextBox
@@ -580,7 +599,7 @@
             this.clear_button.Location = new System.Drawing.Point(211, 401);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(116, 54);
-            this.clear_button.TabIndex = 22;
+            this.clear_button.TabIndex = 10;
             this.clear_button.Text = "Clear form";
             this.clear_button.UseVisualStyleBackColor = true;
             this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
@@ -592,7 +611,7 @@
             this.delete_button.Location = new System.Drawing.Point(388, 401);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(104, 54);
-            this.delete_button.TabIndex = 23;
+            this.delete_button.TabIndex = 11;
             this.delete_button.Text = "Delete";
             this.delete_button.UseVisualStyleBackColor = true;
             this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
@@ -624,7 +643,7 @@
             this.search_textBox.Location = new System.Drawing.Point(682, 80);
             this.search_textBox.Name = "search_textBox";
             this.search_textBox.Size = new System.Drawing.Size(284, 30);
-            this.search_textBox.TabIndex = 25;
+            this.search_textBox.TabIndex = 12;
             this.toolTips.SetToolTip(this.search_textBox, "Type last name of student and hit enter");
             this.search_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_textBox_KeyDown);
             // 
@@ -655,24 +674,6 @@
             this.lblFoundStudents.Size = new System.Drawing.Size(128, 26);
             this.lblFoundStudents.TabIndex = 28;
             this.lblFoundStudents.Text = "Found Students:";
-            // 
-            // studentDbID
-            // 
-            this.studentDbID.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentDbID.Location = new System.Drawing.Point(971, 3);
-            this.studentDbID.Name = "studentDbID";
-            this.studentDbID.Size = new System.Drawing.Size(40, 30);
-            this.studentDbID.TabIndex = 8;
-            this.studentDbID.TabStop = false;
-            this.studentDbID.Visible = false;
-            // 
-            // parentDbID
-            // 
-            this.parentDbID.Location = new System.Drawing.Point(1017, 3);
-            this.parentDbID.Name = "parentDbID";
-            this.parentDbID.Size = new System.Drawing.Size(44, 26);
-            this.parentDbID.TabIndex = 29;
-            this.parentDbID.Visible = false;
             // 
             // studentBindingSource
             // 
@@ -721,13 +722,13 @@
             this.topTableLayoutPanel.PerformLayout();
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).EndInit();
             this.parent_groupBox.ResumeLayout(false);
             this.parent_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
