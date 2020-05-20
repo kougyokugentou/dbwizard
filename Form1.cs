@@ -56,7 +56,18 @@ namespace DBWizard
             {
                 programComboBox.Items.Add(p.name);
             }
-            
+
+            FillSchoolComboBox();
+        }
+        
+        /* Fills school combo boxes on the form
+         * with the static data from the sqlite db.
+         * must be seperated due to schoolEditor.
+         * input: no input
+         * output: void
+         */
+        private void FillSchoolComboBox()
+        {
             List<School> schools = new List<School>();
             schools = SqliteDataAccess.GetSchools();
             foreach (School s in schools)
@@ -64,7 +75,6 @@ namespace DBWizard
                 schoolComboBox.Items.Add(s.name);
             }
         }
-
         /* On click of the picture box, open a file picker dialog box
          * for the user to browse/choose a picture.
          * Once the user clicks OK, the _FileOK event below fires,
@@ -532,6 +542,30 @@ namespace DBWizard
 
             }
 
+        }
+
+        /* Implement the school editor form window
+         * and attach our SchoolEditorClosed delegate to the form window
+         * so the main student form will automatically update/populate
+         * the school dropdown window with the newly added school.
+         * INPUT: no args
+         * OUTPUT: void
+         */
+        private void schoolEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm2 = new frmSchoolEditor();
+            frm2.FormClosed += new FormClosedEventHandler(SchoolEditorClosed);
+            frm2.Show();
+        }
+
+        /* Clear the school combo box and fill it with the newly added school.
+         * INPUT: no args
+         * OUTPUT: void
+         */
+        private void SchoolEditorClosed(object sender, FormClosedEventArgs e)
+        {
+            schoolComboBox.Items.Clear();
+            FillSchoolComboBox();
         }
     } //Form1
 }
