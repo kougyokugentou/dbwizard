@@ -64,7 +64,7 @@ namespace DBWizard
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string strQuery = "SELECT * FROM students WHERE id=@id";
-                Student stu_out = cnn.Query<Student>(strQuery, new { id = dbid_in }).Single();
+                Student stu_out = cnn.Query<Student>(strQuery, new { id = dbid_in }).SingleOrDefault();
 
                 return stu_out;
             }
@@ -155,7 +155,7 @@ namespace DBWizard
                 string strQuery = "INSERT INTO PARENTS (FirstName,LastName,PhoneNumber,EmailAddress)" +
                     "VALUES (@FirstName,@LastName,@PhoneNumber,@EmailAddress);" +
                     "SELECT MAX(parent_id) as parent_id from parents;";
-                int parent_id_out = cnn.Query<int>(strQuery, par).Single();
+                int parent_id_out = cnn.Query<int>(strQuery, par).SingleOrDefault();
                 return parent_id_out;
             }
         }
@@ -222,21 +222,22 @@ namespace DBWizard
 
         #endregion
 
-        #region Misc
-        /* Returns the list of available programs from the DB to fill the Programs drop-down.
-         * INPUT: no args
-         * OUTPUT: List<Program>
+        #region school
+        // ***************** Create *****************
+        /* Inserts a new school to the SQL database.
+         * INPUT: School
+         * OUTPUT: new row to SQL database, null to program.
          */
-        internal List<Program> GetPrograms()
+        internal void InsertNewSchool(School sch)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                string strQuery = "SELECT name FROM programs;";
-
-                var output = cnn.Query<Program>(strQuery, new DynamicParameters());
-                return output.ToList();
+                string strQuery = "INSERT INTO SCHOOLS (name) VALUES (@name)";
+                cnn.Execute(strQuery, sch);
             }
         }
+
+        // ***************** Read *****************
 
         /* Returns the list of available schools from the DB to fill the Schools drop-down.
          * INPUT: no args
@@ -252,6 +253,40 @@ namespace DBWizard
                 return output.ToList();
             }
         }
+
+        /* Returns the a single School from the DB by name.
+         * Needed for the school editor.
+         * INPUT: string school_name_in
+         * OUTPUT: School
+         */
+        internal School GetSchoolByName(string school_name_in)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "SELECT name FROM Schools WHERE name = @school_name;";
+
+                School output = cnn.Query<School>(strQuery, new { school_name = school_name_in }).SingleOrDefault();
+                return output;
+            }
+        }
+        #endregion
+
+        #region Misc
+        /* Returns the list of available programs from the DB to fill the Programs drop-down.
+         * INPUT: no args
+         * OUTPUT: List<Program>
+         */
+        internal List<Program> GetPrograms()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string strQuery = "SELECT name FROM programs;";
+
+                var output = cnn.Query<Program>(strQuery, new DynamicParameters());
+                return output.ToList();
+            }
+        }
+        
         #endregion
 
         #region reports
