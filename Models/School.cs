@@ -9,6 +9,6 @@ namespace DBWizard.Models
     public class School
     {
         public int school_id { get; }
-        public string name { get; }
+        public string name { get; set; }
     }
 }
