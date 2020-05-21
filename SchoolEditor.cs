@@ -66,6 +66,9 @@ namespace DBWizard
             //Display a friendly message and cleanup the textbox for any new entry.
             MessageBox.Show("School added to the database.", "KentYouthDB", MessageBoxButtons.OK, MessageBoxIcon.None);
             schoolNameTextBox.Text = string.Empty;
+
+            //Close the form.
+            Close();
         }
     }
 }
