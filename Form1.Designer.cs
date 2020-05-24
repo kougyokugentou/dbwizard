@@ -56,7 +56,6 @@
             this.studentDbID = new System.Windows.Forms.NumericUpDown();
             this.parentDbID = new System.Windows.Forms.NumericUpDown();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.student_idTextBox = new System.Windows.Forms.TextBox();
             this.dob_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -82,6 +81,7 @@
             this.lblFoundStudents = new System.Windows.Forms.Label();
             this.saveFileDialogReport = new System.Windows.Forms.SaveFileDialog();
             this.student_pictureBox = new System.Windows.Forms.PictureBox();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             lastNameLabel = new System.Windows.Forms.Label();
             firstNameLabel = new System.Windows.Forms.Label();
             student_idLabel = new System.Windows.Forms.Label();
@@ -99,118 +99,118 @@
             this.mainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.parent_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lastNameLabel
             // 
-            lastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             lastNameLabel.AutoSize = true;
             lastNameLabel.BackColor = System.Drawing.Color.Transparent;
             lastNameLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lastNameLabel.Location = new System.Drawing.Point(562, 104);
+            lastNameLabel.Location = new System.Drawing.Point(749, 130);
+            lastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new System.Drawing.Size(113, 32);
+            lastNameLabel.Size = new System.Drawing.Size(147, 42);
             lastNameLabel.TabIndex = 3;
             lastNameLabel.Text = "Last Name:";
             // 
             // firstNameLabel
             // 
-            firstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             firstNameLabel.AutoSize = true;
             firstNameLabel.BackColor = System.Drawing.Color.Transparent;
             firstNameLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            firstNameLabel.Location = new System.Drawing.Point(330, 104);
+            firstNameLabel.Location = new System.Drawing.Point(440, 130);
+            firstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(117, 32);
+            firstNameLabel.Size = new System.Drawing.Size(151, 42);
             firstNameLabel.TabIndex = 4;
             firstNameLabel.Text = "First Name:";
             // 
             // student_idLabel
             // 
-            student_idLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             student_idLabel.AutoSize = true;
             student_idLabel.BackColor = System.Drawing.Color.Transparent;
             student_idLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            student_idLabel.Location = new System.Drawing.Point(88, 320);
+            student_idLabel.Location = new System.Drawing.Point(117, 400);
+            student_idLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             student_idLabel.Name = "student_idLabel";
-            student_idLabel.Size = new System.Drawing.Size(114, 32);
+            student_idLabel.Size = new System.Drawing.Size(148, 42);
             student_idLabel.TabIndex = 6;
             student_idLabel.Text = "Student ID:";
             // 
             // dOBLabel
             // 
-            dOBLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             dOBLabel.AutoSize = true;
             dOBLabel.BackColor = System.Drawing.Color.Transparent;
             dOBLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dOBLabel.Location = new System.Drawing.Point(330, 189);
+            dOBLabel.Location = new System.Drawing.Point(440, 236);
+            dOBLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dOBLabel.Name = "dOBLabel";
-            dOBLabel.Size = new System.Drawing.Size(61, 32);
+            dOBLabel.Size = new System.Drawing.Size(78, 42);
             dOBLabel.TabIndex = 8;
             dOBLabel.Text = "DOB:";
             // 
             // programNameLabel
             // 
-            programNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             programNameLabel.AutoSize = true;
             programNameLabel.BackColor = System.Drawing.Color.Transparent;
             programNameLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            programNameLabel.Location = new System.Drawing.Point(562, 189);
+            programNameLabel.Location = new System.Drawing.Point(749, 236);
+            programNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             programNameLabel.Name = "programNameLabel";
-            programNameLabel.Size = new System.Drawing.Size(95, 32);
+            programNameLabel.Size = new System.Drawing.Size(126, 42);
             programNameLabel.TabIndex = 10;
             programNameLabel.Text = "Program:";
             // 
             // addressLabel
             // 
-            addressLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             addressLabel.AutoSize = true;
             addressLabel.BackColor = System.Drawing.Color.Transparent;
             addressLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            addressLabel.Location = new System.Drawing.Point(330, 392);
+            addressLabel.Location = new System.Drawing.Point(440, 490);
+            addressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new System.Drawing.Size(90, 32);
+            addressLabel.Size = new System.Drawing.Size(115, 42);
             addressLabel.TabIndex = 12;
             addressLabel.Text = "Address:";
             // 
             // schoolLabel
             // 
-            schoolLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             schoolLabel.AutoSize = true;
             schoolLabel.BackColor = System.Drawing.Color.Transparent;
             schoolLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schoolLabel.Location = new System.Drawing.Point(562, 286);
+            schoolLabel.Location = new System.Drawing.Point(749, 358);
+            schoolLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             schoolLabel.Name = "schoolLabel";
-            schoolLabel.Size = new System.Drawing.Size(77, 32);
+            schoolLabel.Size = new System.Drawing.Size(102, 42);
             schoolLabel.TabIndex = 14;
             schoolLabel.Text = "School:";
             // 
             // genderLabel
             // 
-            genderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             genderLabel.AutoSize = true;
             genderLabel.BackColor = System.Drawing.Color.Transparent;
             genderLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            genderLabel.Location = new System.Drawing.Point(329, 286);
+            genderLabel.Location = new System.Drawing.Point(439, 358);
+            genderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             genderLabel.Name = "genderLabel";
-            genderLabel.Size = new System.Drawing.Size(84, 32);
+            genderLabel.Size = new System.Drawing.Size(108, 42);
             genderLabel.TabIndex = 16;
             genderLabel.Text = "Gender:";
             // 
             // gradeLevelLabel
             // 
-            gradeLevelLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             gradeLevelLabel.AutoSize = true;
             gradeLevelLabel.BackColor = System.Drawing.Color.Transparent;
             gradeLevelLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gradeLevelLabel.Location = new System.Drawing.Point(562, 392);
+            gradeLevelLabel.Location = new System.Drawing.Point(749, 490);
+            gradeLevelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             gradeLevelLabel.Name = "gradeLevelLabel";
-            gradeLevelLabel.Size = new System.Drawing.Size(122, 32);
+            gradeLevelLabel.Size = new System.Drawing.Size(159, 42);
             gradeLevelLabel.TabIndex = 18;
             gradeLevelLabel.Text = "Grade Level:";
             // 
@@ -218,9 +218,10 @@
             // 
             lastNameLabel1.AutoSize = true;
             lastNameLabel1.BackColor = System.Drawing.Color.Transparent;
-            lastNameLabel1.Location = new System.Drawing.Point(10, 119);
+            lastNameLabel1.Location = new System.Drawing.Point(13, 149);
+            lastNameLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lastNameLabel1.Name = "lastNameLabel1";
-            lastNameLabel1.Size = new System.Drawing.Size(113, 32);
+            lastNameLabel1.Size = new System.Drawing.Size(147, 42);
             lastNameLabel1.TabIndex = 0;
             lastNameLabel1.Text = "Last Name:";
             // 
@@ -228,9 +229,10 @@
             // 
             firstNameLabel1.AutoSize = true;
             firstNameLabel1.BackColor = System.Drawing.Color.Transparent;
-            firstNameLabel1.Location = new System.Drawing.Point(10, 56);
+            firstNameLabel1.Location = new System.Drawing.Point(13, 70);
+            firstNameLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             firstNameLabel1.Name = "firstNameLabel1";
-            firstNameLabel1.Size = new System.Drawing.Size(117, 32);
+            firstNameLabel1.Size = new System.Drawing.Size(151, 42);
             firstNameLabel1.TabIndex = 2;
             firstNameLabel1.Text = "First Name:";
             // 
@@ -238,9 +240,10 @@
             // 
             phoneNumberLabel.AutoSize = true;
             phoneNumberLabel.BackColor = System.Drawing.Color.Transparent;
-            phoneNumberLabel.Location = new System.Drawing.Point(10, 183);
+            phoneNumberLabel.Location = new System.Drawing.Point(13, 229);
+            phoneNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new System.Drawing.Size(149, 32);
+            phoneNumberLabel.Size = new System.Drawing.Size(198, 42);
             phoneNumberLabel.TabIndex = 4;
             phoneNumberLabel.Text = "Phone Number:";
             // 
@@ -248,9 +251,10 @@
             // 
             emailAddressLabel.AutoSize = true;
             emailAddressLabel.BackColor = System.Drawing.Color.Transparent;
-            emailAddressLabel.Location = new System.Drawing.Point(10, 250);
+            emailAddressLabel.Location = new System.Drawing.Point(13, 312);
+            emailAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             emailAddressLabel.Name = "emailAddressLabel";
-            emailAddressLabel.Size = new System.Drawing.Size(145, 32);
+            emailAddressLabel.Size = new System.Drawing.Size(188, 42);
             emailAddressLabel.TabIndex = 6;
             emailAddressLabel.Text = "Email Address:";
             // 
@@ -258,17 +262,18 @@
             // 
             this.topTableLayoutPanel.ColumnCount = 3;
             this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.topTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.topTableLayoutPanel.Controls.Add(this.mainMenuStrip, 0, 0);
             this.topTableLayoutPanel.Controls.Add(this.studentDbID, 1, 0);
             this.topTableLayoutPanel.Controls.Add(this.parentDbID, 2, 0);
             this.topTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.topTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.topTableLayoutPanel.Name = "topTableLayoutPanel";
             this.topTableLayoutPanel.RowCount = 1;
             this.topTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.topTableLayoutPanel.Size = new System.Drawing.Size(1319, 35);
+            this.topTableLayoutPanel.Size = new System.Drawing.Size(1860, 44);
             this.topTableLayoutPanel.TabIndex = 0;
             // 
             // mainMenuStrip
@@ -283,7 +288,8 @@
             this.schoolsToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
-            this.mainMenuStrip.Size = new System.Drawing.Size(1223, 33);
+            this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.mainMenuStrip.Size = new System.Drawing.Size(1732, 40);
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
             // 
@@ -296,41 +302,41 @@
             this.exitWithoutSavingToolStripMenuItem,
             this.exitsavesDataToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 36);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(349, 44);
             this.newStudentToolStripMenuItem.Text = "&New Student";
             this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // saveStudentToolStripMenuItem
             // 
             this.saveStudentToolStripMenuItem.Name = "saveStudentToolStripMenuItem";
-            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(349, 44);
             this.saveStudentToolStripMenuItem.Text = "&Save Student";
             this.saveStudentToolStripMenuItem.Click += new System.EventHandler(this.save_button_Click);
             // 
             // exportAllDataToolStripMenuItem
             // 
             this.exportAllDataToolStripMenuItem.Name = "exportAllDataToolStripMenuItem";
-            this.exportAllDataToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exportAllDataToolStripMenuItem.Size = new System.Drawing.Size(349, 44);
             this.exportAllDataToolStripMenuItem.Text = "Export All Data";
             this.exportAllDataToolStripMenuItem.Click += new System.EventHandler(this.exportAllDataToolStripMenuItem_Click);
             // 
             // exitWithoutSavingToolStripMenuItem
             // 
             this.exitWithoutSavingToolStripMenuItem.Name = "exitWithoutSavingToolStripMenuItem";
-            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(349, 44);
             this.exitWithoutSavingToolStripMenuItem.Text = "Exit without saving";
             this.exitWithoutSavingToolStripMenuItem.Click += new System.EventHandler(this.exitWithoutSavingToolStripMenuItem_Click);
             // 
             // exitsavesDataToolStripMenuItem
             // 
             this.exitsavesDataToolStripMenuItem.Name = "exitsavesDataToolStripMenuItem";
-            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(349, 44);
             this.exitsavesDataToolStripMenuItem.Text = "E&xit (saves data)";
             this.exitsavesDataToolStripMenuItem.Click += new System.EventHandler(this.exitsavesDataToolStripMenuItem_Click);
             // 
@@ -339,124 +345,121 @@
             this.schoolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.schoolEditorToolStripMenuItem});
             this.schoolsToolStripMenuItem.Name = "schoolsToolStripMenuItem";
-            this.schoolsToolStripMenuItem.Size = new System.Drawing.Size(90, 29);
+            this.schoolsToolStripMenuItem.Size = new System.Drawing.Size(117, 36);
             this.schoolsToolStripMenuItem.Text = "Schools";
             // 
             // schoolEditorToolStripMenuItem
             // 
             this.schoolEditorToolStripMenuItem.Name = "schoolEditorToolStripMenuItem";
-            this.schoolEditorToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.schoolEditorToolStripMenuItem.Size = new System.Drawing.Size(290, 44);
             this.schoolEditorToolStripMenuItem.Text = "School Editor";
             this.schoolEditorToolStripMenuItem.Click += new System.EventHandler(this.schoolEditorToolStripMenuItem_Click);
             // 
             // studentDbID
             // 
             this.studentDbID.Font = new System.Drawing.Font("Sitka Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentDbID.Location = new System.Drawing.Point(1226, 3);
+            this.studentDbID.Location = new System.Drawing.Point(1736, 4);
+            this.studentDbID.Margin = new System.Windows.Forms.Padding(4);
             this.studentDbID.Name = "studentDbID";
-            this.studentDbID.Size = new System.Drawing.Size(40, 30);
+            this.studentDbID.Size = new System.Drawing.Size(53, 38);
             this.studentDbID.TabIndex = 8;
             this.studentDbID.TabStop = false;
             this.studentDbID.Visible = false;
             // 
             // parentDbID
             // 
-            this.parentDbID.Location = new System.Drawing.Point(1272, 3);
+            this.parentDbID.Location = new System.Drawing.Point(1797, 4);
+            this.parentDbID.Margin = new System.Windows.Forms.Padding(4);
             this.parentDbID.Name = "parentDbID";
-            this.parentDbID.Size = new System.Drawing.Size(44, 26);
+            this.parentDbID.Size = new System.Drawing.Size(59, 31);
             this.parentDbID.TabIndex = 29;
             this.parentDbID.TabStop = false;
             this.parentDbID.Visible = false;
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "LastName", true));
             this.lastNameTextBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastNameTextBox.Location = new System.Drawing.Point(568, 141);
+            this.lastNameTextBox.Location = new System.Drawing.Point(757, 176);
+            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(167, 35);
+            this.lastNameTextBox.Size = new System.Drawing.Size(221, 44);
             this.lastNameTextBox.TabIndex = 1;
             this.lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
-            // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "FirstName", true));
             this.firstNameTextBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameTextBox.Location = new System.Drawing.Point(334, 141);
+            this.firstNameTextBox.Location = new System.Drawing.Point(445, 176);
+            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(177, 35);
+            this.firstNameTextBox.Size = new System.Drawing.Size(235, 44);
             this.firstNameTextBox.TabIndex = 0;
             this.firstNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // student_idTextBox
             // 
-            this.student_idTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.student_idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "student_id", true));
             this.student_idTextBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.student_idTextBox.Location = new System.Drawing.Point(93, 357);
+            this.student_idTextBox.Location = new System.Drawing.Point(124, 446);
+            this.student_idTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.student_idTextBox.Name = "student_idTextBox";
-            this.student_idTextBox.Size = new System.Drawing.Size(135, 35);
+            this.student_idTextBox.Size = new System.Drawing.Size(179, 44);
             this.student_idTextBox.TabIndex = 6;
             this.student_idTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.student_idTextBox_Validating);
             // 
             // dob_dateTimePicker
             // 
-            this.dob_dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dob_dateTimePicker.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dob_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dob_dateTimePicker.Location = new System.Drawing.Point(334, 228);
+            this.dob_dateTimePicker.Location = new System.Drawing.Point(445, 285);
+            this.dob_dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dob_dateTimePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dob_dateTimePicker.Name = "dob_dateTimePicker";
-            this.dob_dateTimePicker.Size = new System.Drawing.Size(135, 35);
+            this.dob_dateTimePicker.Size = new System.Drawing.Size(179, 44);
             this.dob_dateTimePicker.TabIndex = 2;
             this.dob_dateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.dob_dateTimePicker_Validating);
             // 
             // programComboBox
             // 
-            this.programComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.programComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programComboBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.programComboBox.FormattingEnabled = true;
-            this.programComboBox.Location = new System.Drawing.Point(568, 223);
+            this.programComboBox.Location = new System.Drawing.Point(757, 285);
+            this.programComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.programComboBox.Name = "programComboBox";
-            this.programComboBox.Size = new System.Drawing.Size(177, 40);
+            this.programComboBox.Size = new System.Drawing.Size(235, 50);
             this.programComboBox.TabIndex = 3;
             this.programComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // addressTextBox
             // 
-            this.addressTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "address", true));
             this.addressTextBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTextBox.Location = new System.Drawing.Point(335, 436);
+            this.addressTextBox.Location = new System.Drawing.Point(447, 545);
+            this.addressTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(167, 66);
+            this.addressTextBox.Size = new System.Drawing.Size(221, 82);
             this.addressTextBox.TabIndex = 7;
             this.addressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // schoolComboBox
             // 
-            this.schoolComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.schoolComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "School.name", true));
             this.schoolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.schoolComboBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schoolComboBox.FormattingEnabled = true;
-            this.schoolComboBox.Location = new System.Drawing.Point(566, 330);
+            this.schoolComboBox.Location = new System.Drawing.Point(755, 412);
+            this.schoolComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.schoolComboBox.Name = "schoolComboBox";
-            this.schoolComboBox.Size = new System.Drawing.Size(177, 40);
+            this.schoolComboBox.Size = new System.Drawing.Size(235, 50);
             this.schoolComboBox.TabIndex = 5;
             this.schoolComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // genderComboBox
             // 
-            this.genderComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.genderComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "gender", true));
             this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderComboBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -464,15 +467,15 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(334, 330);
+            this.genderComboBox.Location = new System.Drawing.Point(445, 412);
+            this.genderComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(121, 40);
+            this.genderComboBox.Size = new System.Drawing.Size(160, 50);
             this.genderComboBox.TabIndex = 4;
             this.genderComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // gradeLevelComboBox
             // 
-            this.gradeLevelComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gradeLevelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "GradeLevel", true));
             this.gradeLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.gradeLevelComboBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -491,20 +494,21 @@
             "10",
             "11",
             "12"});
-            this.gradeLevelComboBox.Location = new System.Drawing.Point(568, 433);
+            this.gradeLevelComboBox.Location = new System.Drawing.Point(757, 541);
+            this.gradeLevelComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.gradeLevelComboBox.Name = "gradeLevelComboBox";
-            this.gradeLevelComboBox.Size = new System.Drawing.Size(121, 40);
+            this.gradeLevelComboBox.Size = new System.Drawing.Size(160, 50);
             this.gradeLevelComboBox.TabIndex = 8;
             this.gradeLevelComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBox_Validating);
             // 
             // save_button
             // 
-            this.save_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.save_button.AutoSize = true;
             this.save_button.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_button.Location = new System.Drawing.Point(137, 570);
+            this.save_button.Location = new System.Drawing.Point(183, 712);
+            this.save_button.Margin = new System.Windows.Forms.Padding(4);
             this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(133, 60);
+            this.save_button.Size = new System.Drawing.Size(177, 75);
             this.save_button.TabIndex = 10;
             this.save_button.Text = "Save";
             this.save_button.UseVisualStyleBackColor = true;
@@ -512,7 +516,6 @@
             // 
             // parent_groupBox
             // 
-            this.parent_groupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.parent_groupBox.AutoSize = true;
             this.parent_groupBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.parent_groupBox.Controls.Add(emailAddressLabel);
@@ -525,19 +528,23 @@
             this.parent_groupBox.Controls.Add(this.parent_lastNameTextBox);
             this.parent_groupBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.parent_groupBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.parent_groupBox.Location = new System.Drawing.Point(788, 320);
+            this.parent_groupBox.Location = new System.Drawing.Point(1051, 400);
+            this.parent_groupBox.Margin = new System.Windows.Forms.Padding(4);
             this.parent_groupBox.Name = "parent_groupBox";
-            this.parent_groupBox.Size = new System.Drawing.Size(419, 348);
+            this.parent_groupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.parent_groupBox.Size = new System.Drawing.Size(559, 435);
             this.parent_groupBox.TabIndex = 9;
             this.parent_groupBox.TabStop = false;
             this.parent_groupBox.Text = "Parent Information";
+            this.parent_groupBox.Enter += new System.EventHandler(this.parent_groupBox_Enter);
             // 
             // emailAddressTextBox
             // 
             this.emailAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Parent.EmailAddress", true));
-            this.emailAddressTextBox.Location = new System.Drawing.Point(188, 250);
+            this.emailAddressTextBox.Location = new System.Drawing.Point(251, 312);
+            this.emailAddressTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailAddressTextBox.Name = "emailAddressTextBox";
-            this.emailAddressTextBox.Size = new System.Drawing.Size(172, 35);
+            this.emailAddressTextBox.Size = new System.Drawing.Size(228, 44);
             this.emailAddressTextBox.TabIndex = 3;
             this.toolTips.SetToolTip(this.emailAddressTextBox, "Enter a valid email address with @");
             this.emailAddressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailAddressTextBox_Validating);
@@ -545,7 +552,8 @@
             // phoneNumberNumericUpDown
             // 
             this.phoneNumberNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.studentBindingSource, "Parent.PhoneNumber", true));
-            this.phoneNumberNumericUpDown.Location = new System.Drawing.Point(188, 182);
+            this.phoneNumberNumericUpDown.Location = new System.Drawing.Point(251, 228);
+            this.phoneNumberNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.phoneNumberNumericUpDown.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -557,7 +565,7 @@
             0,
             0});
             this.phoneNumberNumericUpDown.Name = "phoneNumberNumericUpDown";
-            this.phoneNumberNumericUpDown.Size = new System.Drawing.Size(172, 35);
+            this.phoneNumberNumericUpDown.Size = new System.Drawing.Size(229, 44);
             this.phoneNumberNumericUpDown.TabIndex = 2;
             this.toolTips.SetToolTip(this.phoneNumberNumericUpDown, "Enter 9 digit phone number with no symbols.");
             this.phoneNumberNumericUpDown.Value = new decimal(new int[] {
@@ -570,29 +578,31 @@
             // parent_firstNameTextBox
             // 
             this.parent_firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Parent.FirstName", true));
-            this.parent_firstNameTextBox.Location = new System.Drawing.Point(187, 56);
+            this.parent_firstNameTextBox.Location = new System.Drawing.Point(249, 70);
+            this.parent_firstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.parent_firstNameTextBox.Name = "parent_firstNameTextBox";
-            this.parent_firstNameTextBox.Size = new System.Drawing.Size(173, 35);
+            this.parent_firstNameTextBox.Size = new System.Drawing.Size(229, 44);
             this.parent_firstNameTextBox.TabIndex = 0;
             this.parent_firstNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // parent_lastNameTextBox
             // 
             this.parent_lastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentBindingSource, "Parent.LastName", true));
-            this.parent_lastNameTextBox.Location = new System.Drawing.Point(187, 117);
+            this.parent_lastNameTextBox.Location = new System.Drawing.Point(249, 146);
+            this.parent_lastNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.parent_lastNameTextBox.Name = "parent_lastNameTextBox";
-            this.parent_lastNameTextBox.Size = new System.Drawing.Size(173, 35);
+            this.parent_lastNameTextBox.Size = new System.Drawing.Size(229, 44);
             this.parent_lastNameTextBox.TabIndex = 1;
             this.parent_lastNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
             // clear_button
             // 
-            this.clear_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.clear_button.AutoSize = true;
             this.clear_button.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_button.Location = new System.Drawing.Point(347, 570);
+            this.clear_button.Location = new System.Drawing.Point(463, 712);
+            this.clear_button.Margin = new System.Windows.Forms.Padding(4);
             this.clear_button.Name = "clear_button";
-            this.clear_button.Size = new System.Drawing.Size(142, 60);
+            this.clear_button.Size = new System.Drawing.Size(189, 75);
             this.clear_button.TabIndex = 11;
             this.clear_button.Text = "Clear form";
             this.clear_button.UseVisualStyleBackColor = true;
@@ -600,12 +610,12 @@
             // 
             // delete_button
             // 
-            this.delete_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.delete_button.AutoSize = true;
             this.delete_button.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_button.Location = new System.Drawing.Point(566, 570);
+            this.delete_button.Location = new System.Drawing.Point(755, 712);
+            this.delete_button.Margin = new System.Windows.Forms.Padding(4);
             this.delete_button.Name = "delete_button";
-            this.delete_button.Size = new System.Drawing.Size(130, 60);
+            this.delete_button.Size = new System.Drawing.Size(173, 75);
             this.delete_button.TabIndex = 12;
             this.delete_button.Text = "Delete";
             this.delete_button.UseVisualStyleBackColor = true;
@@ -621,23 +631,23 @@
             // 
             // lblSearch
             // 
-            this.lblSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSearch.AutoSize = true;
             this.lblSearch.BackColor = System.Drawing.Color.Transparent;
             this.lblSearch.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(806, 104);
+            this.lblSearch.Location = new System.Drawing.Point(1075, 130);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(275, 32);
+            this.lblSearch.Size = new System.Drawing.Size(360, 42);
             this.lblSearch.TabIndex = 24;
             this.lblSearch.Text = "Search Student by Last Name:";
             // 
             // search_textBox
             // 
-            this.search_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.search_textBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_textBox.Location = new System.Drawing.Point(809, 141);
+            this.search_textBox.Location = new System.Drawing.Point(1079, 176);
+            this.search_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.search_textBox.Name = "search_textBox";
-            this.search_textBox.Size = new System.Drawing.Size(284, 35);
+            this.search_textBox.Size = new System.Drawing.Size(377, 44);
             this.search_textBox.TabIndex = 13;
             this.toolTips.SetToolTip(this.search_textBox, "Type last name of student and hit enter");
             this.search_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_textBox_KeyDown);
@@ -648,25 +658,25 @@
             // 
             // foundStudents_comboBox
             // 
-            this.foundStudents_comboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.foundStudents_comboBox.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foundStudents_comboBox.FormattingEnabled = true;
-            this.foundStudents_comboBox.Location = new System.Drawing.Point(811, 228);
+            this.foundStudents_comboBox.Location = new System.Drawing.Point(1081, 285);
+            this.foundStudents_comboBox.Margin = new System.Windows.Forms.Padding(4);
             this.foundStudents_comboBox.Name = "foundStudents_comboBox";
-            this.foundStudents_comboBox.Size = new System.Drawing.Size(284, 40);
+            this.foundStudents_comboBox.Size = new System.Drawing.Size(377, 50);
             this.foundStudents_comboBox.TabIndex = 14;
             this.foundStudents_comboBox.SelectionChangeCommitted += new System.EventHandler(this.foundStudents_comboBox_SelectionChangeCommitted);
             this.foundStudents_comboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.foundStudents_comboBox_KeyDown);
             // 
             // lblFoundStudents
             // 
-            this.lblFoundStudents.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFoundStudents.AutoSize = true;
             this.lblFoundStudents.BackColor = System.Drawing.Color.Transparent;
             this.lblFoundStudents.Font = new System.Drawing.Font("Sitka Display", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoundStudents.Location = new System.Drawing.Point(806, 189);
+            this.lblFoundStudents.Location = new System.Drawing.Point(1075, 236);
+            this.lblFoundStudents.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFoundStudents.Name = "lblFoundStudents";
-            this.lblFoundStudents.Size = new System.Drawing.Size(157, 32);
+            this.lblFoundStudents.Size = new System.Drawing.Size(203, 42);
             this.lblFoundStudents.TabIndex = 28;
             this.lblFoundStudents.Text = "Found Students:";
             // 
@@ -678,23 +688,27 @@
             // 
             // student_pictureBox
             // 
-            this.student_pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.student_pictureBox.BackColor = System.Drawing.SystemColors.Window;
             this.student_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("student_pictureBox.Image")));
-            this.student_pictureBox.Location = new System.Drawing.Point(93, 103);
+            this.student_pictureBox.Location = new System.Drawing.Point(124, 129);
+            this.student_pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.student_pictureBox.Name = "student_pictureBox";
-            this.student_pictureBox.Size = new System.Drawing.Size(200, 198);
+            this.student_pictureBox.Size = new System.Drawing.Size(267, 248);
             this.student_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.student_pictureBox.TabIndex = 1;
             this.student_pictureBox.TabStop = false;
             this.student_pictureBox.Tag = "DefaultImage";
             this.student_pictureBox.DoubleClick += new System.EventHandler(this.student_pictureBox_DoubleClick);
             // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataSource = typeof(DBWizard.Models.Student);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1319, 774);
+            this.ClientSize = new System.Drawing.Size(1860, 1112);
             this.Controls.Add(this.lblFoundStudents);
             this.Controls.Add(this.foundStudents_comboBox);
             this.Controls.Add(this.topTableLayoutPanel);
@@ -725,6 +739,8 @@
             this.Controls.Add(this.schoolComboBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1785, 1039);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KentYouthDB";
@@ -735,12 +751,12 @@
             this.mainMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDbID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parentDbID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.parent_groupBox.ResumeLayout(false);
             this.parent_groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

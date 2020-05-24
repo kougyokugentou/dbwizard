@@ -567,5 +567,10 @@ namespace DBWizard
             schoolComboBox.Items.Clear();
             FillSchoolComboBox();
         }
+
+        private void parent_groupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     } //Form1
 }
