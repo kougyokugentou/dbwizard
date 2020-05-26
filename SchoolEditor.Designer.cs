@@ -40,10 +40,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // schoolBindingSource
-            // 
-            this.schoolBindingSource.DataSource = typeof(DBWizard.Models.School);
-            // 
             // schoolNameLabel
             // 
             schoolNameLabel.AutoSize = true;
@@ -52,6 +48,10 @@
             schoolNameLabel.Size = new System.Drawing.Size(186, 20);
             schoolNameLabel.TabIndex = 1;
             schoolNameLabel.Text = "Enter New School Name:";
+            // 
+            // schoolBindingSource
+            // 
+            this.schoolBindingSource.DataSource = typeof(DBWizard.Models.School);
             // 
             // schoolNameTextBox
             // 
@@ -64,9 +64,10 @@
             // 
             // btnAddSchool
             // 
-            this.btnAddSchool.Location = new System.Drawing.Point(263, 26);
+            this.btnAddSchool.Font = new System.Drawing.Font("Sitka Display", 10.875F);
+            this.btnAddSchool.Location = new System.Drawing.Point(243, 26);
             this.btnAddSchool.Name = "btnAddSchool";
-            this.btnAddSchool.Size = new System.Drawing.Size(81, 54);
+            this.btnAddSchool.Size = new System.Drawing.Size(101, 74);
             this.btnAddSchool.TabIndex = 3;
             this.btnAddSchool.Text = "Add School";
             this.btnAddSchool.UseVisualStyleBackColor = true;
