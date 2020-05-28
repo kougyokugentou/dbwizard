@@ -43,9 +43,10 @@
             // schoolNameLabel
             // 
             schoolNameLabel.AutoSize = true;
-            schoolNameLabel.Location = new System.Drawing.Point(21, 19);
+            schoolNameLabel.Font = new System.Drawing.Font("Sitka Display", 10.875F);
+            schoolNameLabel.Location = new System.Drawing.Point(-2, 19);
             schoolNameLabel.Name = "schoolNameLabel";
-            schoolNameLabel.Size = new System.Drawing.Size(186, 20);
+            schoolNameLabel.Size = new System.Drawing.Size(229, 32);
             schoolNameLabel.TabIndex = 1;
             schoolNameLabel.Text = "Enter New School Name:";
             // 
@@ -56,9 +57,10 @@
             // schoolNameTextBox
             // 
             this.schoolNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.schoolBindingSource, "name", true));
+            this.schoolNameTextBox.Font = new System.Drawing.Font("Sitka Display", 10.875F);
             this.schoolNameTextBox.Location = new System.Drawing.Point(25, 54);
             this.schoolNameTextBox.Name = "schoolNameTextBox";
-            this.schoolNameTextBox.Size = new System.Drawing.Size(182, 26);
+            this.schoolNameTextBox.Size = new System.Drawing.Size(202, 35);
             this.schoolNameTextBox.TabIndex = 2;
             this.schoolNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextBox_Validating);
             // 

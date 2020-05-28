@@ -267,6 +267,7 @@
             this.mainMenuStrip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainMenuStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.mainMenuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mainMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -285,42 +286,43 @@
             this.exportAllDataToolStripMenuItem,
             this.exitWithoutSavingToolStripMenuItem,
             this.exitsavesDataToolStripMenuItem});
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Sitka Display", 10.875F);
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 31);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
             this.newStudentToolStripMenuItem.Text = "&New Student";
             this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // saveStudentToolStripMenuItem
             // 
             this.saveStudentToolStripMenuItem.Name = "saveStudentToolStripMenuItem";
-            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.saveStudentToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
             this.saveStudentToolStripMenuItem.Text = "&Save Student";
             this.saveStudentToolStripMenuItem.Click += new System.EventHandler(this.save_button_Click);
             // 
             // exportAllDataToolStripMenuItem
             // 
             this.exportAllDataToolStripMenuItem.Name = "exportAllDataToolStripMenuItem";
-            this.exportAllDataToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exportAllDataToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
             this.exportAllDataToolStripMenuItem.Text = "Export All Data";
             this.exportAllDataToolStripMenuItem.Click += new System.EventHandler(this.exportAllDataToolStripMenuItem_Click);
             // 
             // exitWithoutSavingToolStripMenuItem
             // 
             this.exitWithoutSavingToolStripMenuItem.Name = "exitWithoutSavingToolStripMenuItem";
-            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitWithoutSavingToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
             this.exitWithoutSavingToolStripMenuItem.Text = "Exit without saving";
             this.exitWithoutSavingToolStripMenuItem.Click += new System.EventHandler(this.exitWithoutSavingToolStripMenuItem_Click);
             // 
             // exitsavesDataToolStripMenuItem
             // 
             this.exitsavesDataToolStripMenuItem.Name = "exitsavesDataToolStripMenuItem";
-            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.exitsavesDataToolStripMenuItem.Size = new System.Drawing.Size(290, 40);
             this.exitsavesDataToolStripMenuItem.Text = "E&xit (saves data)";
             this.exitsavesDataToolStripMenuItem.Click += new System.EventHandler(this.exitsavesDataToolStripMenuItem_Click);
             // 
@@ -330,13 +332,13 @@
             this.schoolEditorToolStripMenuItem});
             this.schoolsToolStripMenuItem.Font = new System.Drawing.Font("Sitka Display", 10.875F);
             this.schoolsToolStripMenuItem.Name = "schoolsToolStripMenuItem";
-            this.schoolsToolStripMenuItem.Size = new System.Drawing.Size(96, 31);
+            this.schoolsToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
             this.schoolsToolStripMenuItem.Text = "Schools";
             // 
             // schoolEditorToolStripMenuItem
             // 
             this.schoolEditorToolStripMenuItem.Name = "schoolEditorToolStripMenuItem";
-            this.schoolEditorToolStripMenuItem.Size = new System.Drawing.Size(235, 40);
+            this.schoolEditorToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
             this.schoolEditorToolStripMenuItem.Text = "School Editor";
             this.schoolEditorToolStripMenuItem.Click += new System.EventHandler(this.schoolEditorToolStripMenuItem_Click);
             // 
@@ -668,7 +670,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 840);
+            this.ClientSize = new System.Drawing.Size(1395, 656);
             this.Controls.Add(this.lblFoundStudents);
             this.Controls.Add(this.foundStudents_comboBox);
             this.Controls.Add(this.topTableLayoutPanel);
@@ -699,7 +701,7 @@
             this.Controls.Add(this.schoolComboBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
-            this.MinimumSize = new System.Drawing.Size(1344, 826);
+            this.MinimumSize = new System.Drawing.Size(1344, 657);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KentYouthDB";
