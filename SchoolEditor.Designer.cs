@@ -69,7 +69,7 @@
             this.btnAddSchool.Font = new System.Drawing.Font("Sitka Display", 10.875F);
             this.btnAddSchool.Location = new System.Drawing.Point(243, 26);
             this.btnAddSchool.Name = "btnAddSchool";
-            this.btnAddSchool.Size = new System.Drawing.Size(101, 74);
+            this.btnAddSchool.Size = new System.Drawing.Size(109, 89);
             this.btnAddSchool.TabIndex = 3;
             this.btnAddSchool.Text = "Add School";
             this.btnAddSchool.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 123);
+            this.ClientSize = new System.Drawing.Size(364, 133);
             this.Controls.Add(this.btnAddSchool);
             this.Controls.Add(schoolNameLabel);
             this.Controls.Add(this.schoolNameTextBox);
