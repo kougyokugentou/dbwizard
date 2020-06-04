@@ -424,7 +424,7 @@
             this.addressTextBox.Location = new System.Drawing.Point(335, 436);
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(167, 66);
+            this.addressTextBox.Size = new System.Drawing.Size(167, 118);
             this.addressTextBox.TabIndex = 7;
             this.addressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.String_TextBox_Validating);
             // 
