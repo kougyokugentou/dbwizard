@@ -288,7 +288,7 @@
             this.exitsavesDataToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Sitka Display", 10.875F);
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 31);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newStudentToolStripMenuItem
@@ -332,13 +332,13 @@
             this.schoolEditorToolStripMenuItem});
             this.schoolsToolStripMenuItem.Font = new System.Drawing.Font("Sitka Display", 10.875F);
             this.schoolsToolStripMenuItem.Name = "schoolsToolStripMenuItem";
-            this.schoolsToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
+            this.schoolsToolStripMenuItem.Size = new System.Drawing.Size(96, 31);
             this.schoolsToolStripMenuItem.Text = "Schools";
             // 
             // schoolEditorToolStripMenuItem
             // 
             this.schoolEditorToolStripMenuItem.Name = "schoolEditorToolStripMenuItem";
-            this.schoolEditorToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
+            this.schoolEditorToolStripMenuItem.Size = new System.Drawing.Size(235, 40);
             this.schoolEditorToolStripMenuItem.Text = "School Editor";
             this.schoolEditorToolStripMenuItem.Click += new System.EventHandler(this.schoolEditorToolStripMenuItem_Click);
             // 
@@ -670,7 +670,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 656);
+            this.ClientSize = new System.Drawing.Size(1395, 697);
             this.Controls.Add(this.lblFoundStudents);
             this.Controls.Add(this.foundStudents_comboBox);
             this.Controls.Add(this.topTableLayoutPanel);
